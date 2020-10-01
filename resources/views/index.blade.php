@@ -56,6 +56,19 @@
                         </div>
                     </div>
 
+
+                    <div class="mb-3">
+                        <div class="col-md-12 mb-3">
+                            <label for="firstName">Tipo de credito</label>
+                            <select class="custom-select" name="tipoCredito" id="inputGroupSelect01" required>
+                                <option selected>Choose...</option>
+                                <option value="1">Corto plazo (Menos de un año)</option>
+                                <option value="2">Largo plazo (Más de un año)</option>
+                              </select>
+
+                        </div>
+                    </div>
+
                     <div class="mb-3">
                         <label for="username">Fecha de disposición</label>
                         <div class="input-group">
@@ -68,7 +81,7 @@
 
                     <div class="mb-3">
                         <label for="email">Monto de disposición </label>
-                        <input type="number" name="montoDisp" class="form-control" id="email" placeholder="">
+                        <input type="number" max="12000000" name="montoDisp" class="form-control" id="email" placeholder="">
                     </div>
 
                     <hr>
@@ -81,7 +94,7 @@
 
                         <div class="col-md-12 mb-3">
                             <label for="firstName">>Forma del pago de interes:</label>
-                            <input type="text" name="pagoInteres" class="form-control" id="firstName" value="anual" placeholder="" value="" readonly>
+                            <input type="text"  name="pagoInteres" class="form-control" id="firstName" value="anual" placeholder="" value="" readonly>
 
                         </div>
 

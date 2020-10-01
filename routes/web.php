@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use App\Mail\mailCotizador;
+use Maatwebsite\Excel\Facades\Excel;
 
 
 /*
@@ -35,6 +37,8 @@ Route::post('/corizador', function (Request $request) {
     //     return $cantidad.'<br>';
     // }
 
+
+
     //Creamos el for para la cantidad de meses
     for ($i=0; $i < $cantidad; $i++) {
 
@@ -46,7 +50,16 @@ Route::post('/corizador', function (Request $request) {
         $saldoFinal = $montoDisp - $capital;
 
 
-        echo $fechaDisp.' | '.date("d-M-Y",strtotime($fechaDisp."+ 350 days")).' | '.$montoDisp.' | '.$capital.' | '.$impuesto.' | '.$pago.' | '.$saldoFinal.'<br>';
+        $tabla[] = [
+            'Columna 1' => $fechaDisp,
+            'Columna 2' => date("d-M-Y", strtotime($fechaDisp."+ 350 days")),
+            'Columna 4' =>$montoDisp,
+            'Columna 5' =>$capital,
+            'Columna 6' =>$impuesto,
+            'Columna 7' =>$pago,
+            'Columna 8' =>$saldoFinal
+        ];
+
 
         $fechaDisp = date("d-M-Y",strtotime($fechaDisp."+ 350 days"));
         $montoDisp = $saldoFinal;
@@ -56,6 +69,18 @@ Route::post('/corizador', function (Request $request) {
 
     }
 
-    echo 'Total Intereses: '.$totalIntereses.'<br>'.'Total pago: '.$totalPago;
+    foreach ($tabla as $key => $value) {
+        $tabla['tabla'][$key] = (object) $value;
+    }
+    //return $tabla['tabla'];
+
+    //return $tabla;
+    //$tabla = json_encode($tabla);
+    //return Excel::download(new Collection($tabla), 'users.xlsx');
+
+    Mail::to($request->correo)->send(new mailCotizador($tabla, $totalIntereses, $totalPago));
+
+    //echo 'Total Intereses: '.$totalIntereses.'<br>'.'Total pago: '.$totalPago;
+    return "Hemos enviado el cotizador a tu correo electronico";
 
 })->name('corizador');
