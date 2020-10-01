@@ -48,25 +48,25 @@
                         <h4 class="mb-3">Información del solicitante</h4>
                         <div class="col-md-12 mb-3">
                             <label for="firstName">Nombre</label>
-                            <input type="text" name="nombre" class="form-control" id="firstName" placeholder="" value="" required>
+                            <input type="text" name="nombre" class="form-control" id="firstName" placeholder="" value=""
+                                required>
                         </div>
                         <div class="col-md-12 mb-3">
                             <label for="firstName">Correo</label>
-                            <input type="text" name="correo" class="form-control" id="firstName" placeholder="" value="" required>
+                            <input type="text" name="correo" class="form-control" id="firstName" placeholder="" value=""
+                                required>
                         </div>
                     </div>
 
 
                     <div class="mb-3">
-                        <div class="col-md-12 mb-3">
                             <label for="firstName">Tipo de credito</label>
-                            <select class="custom-select" name="tipoCredito" id="inputGroupSelect01" required>
-                                <option selected>Choose...</option>
-                                <option value="1">Corto plazo (Menos de un año)</option>
-                                <option value="2">Largo plazo (Más de un año)</option>
-                              </select>
+                            <select class="custom-select" name="tipoCredito" id="select-tipo-credito" required>
+                                <option selected>Selecciona tipo de credito</option>
+                                <option value="corto">Corto plazo (Menos de un año)</option>
+                                <option value="largo">Largo plazo (Más de un año)</option>
+                            </select>
 
-                        </div>
                     </div>
 
                     <div class="mb-3">
@@ -81,33 +81,45 @@
 
                     <div class="mb-3">
                         <label for="email">Monto de disposición </label>
-                        <input type="number" max="12000000" name="montoDisp" class="form-control" id="email" placeholder="">
+                        <input type="number" max="12000000" name="montoDisp" class="form-control" id="email"
+                            placeholder="">
                     </div>
 
                     <hr>
                     <div class="row">
-                        <div class="col-md-12 mb-3">
+                        {{-- <div class="col-md-12 mb-3">
                             <label for="firstName">Forma del pago de capital:</label>
-                            <input type="text" name="pagoCapital" class="form-control" id="firstName" value="anual" placeholder="" value="" readonly>
+                            <input type="text" name="pagoCapital" class="form-control" id="firstName" value="anual"
+                                placeholder="" value="" readonly>
 
                         </div>
 
                         <div class="col-md-12 mb-3">
                             <label for="firstName">>Forma del pago de interes:</label>
-                            <input type="text"  name="pagoInteres" class="form-control" id="firstName" value="anual" placeholder="" value="" readonly>
+                            <input type="text" name="pagoInteres" class="form-control" id="firstName" value="anual"
+                                placeholder="" value="" readonly>
 
-                        </div>
+                        </div> --}}
 
                         <div class="col-md-12 mb-3">
                             <label for="firstName">Plazo de linea</label>
-                            <select class="custom-select" name="plazo" id="inputGroupSelect01" required>
-                                <option selected>Choose...</option>
+                            <select class="custom-select" name="plazo" id="select-anual" required>
+                                <option selected>Plazo anual</option>
                                 <option value="1">1 año</option>
                                 <option value="2">2 años</option>
                                 <option value="3">3 años</option>
                                 <option value="4">4 años</option>
                                 <option value="5">5 años</option>
-                              </select>
+                            </select>
+
+
+                            <select class="custom-select" name="plazo" id="select-mensual" style="display: none;" required>
+                                <option selected>Plazo mensual</option>
+                                <option value="1">1 mes</option>
+                                <option value="3">3 meses</option>
+                                <option value="6">6 meses</option>
+                                <option value="12">12 meses</option>
+                            </select>
 
                         </div>
                     </div>
@@ -176,6 +188,25 @@
         integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous">
     </script>
     <script src="form-validation.js"></script>
+
+
+    <script>
+
+        $('#select-tipo-credito').on('change', function(){
+            if($('#select-tipo-credito').val() == 'corto'){
+                console.log('corto pago')
+                $('#select-anual').css('display', 'none');
+                $('#select-mensual').css('display', 'block');
+
+            }else if ($('#select-tipo-credito').val() == 'largo'){
+                console.log('largo pago')
+                $('#select-anual').css('display', 'block');
+                $('#select-mensual').css('display', 'none');
+            }
+        })
+
+
+    </script>
 </body>
 
 </html>
