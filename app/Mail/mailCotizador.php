@@ -20,12 +20,18 @@ class mailCotizador extends Mailable
     public $tabla;
     public $totalIntereses;
     public $totalPago;
+    public $excel;
 
-    public function __construct($tabla,$totalIntereses,$totalPago)
+    // public function __construct($tabla,$totalIntereses,$totalPago)
+    // {
+    //     $this->tabla = $tabla;
+    //     $this->totalIntereses = $totalIntereses;
+    //     $this->totalPago = $totalPago;
+    // }
+
+    public function __construct($excel)
     {
-        $this->tabla = $tabla;
-        $this->totalIntereses = $totalIntereses;
-        $this->totalPago = $totalPago;
+        $this->excel = $excel;
     }
 
     /**
@@ -33,8 +39,9 @@ class mailCotizador extends Mailable
      *
      * @return $this
      */
+
     public function build()
     {
-        return $this->view('mail');
+        return $this->view('mail')->attach($this->excel);
     }
 }

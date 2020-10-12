@@ -103,7 +103,7 @@
 
                         <div class="col-md-12 mb-3">
                             <label for="firstName">Plazo de linea</label>
-                            <select class="custom-select" name="plazo" id="select-anual" required>
+                            <select class="custom-select" name="plazoLargo" id="select-anual" required>
                                 <option selected>Plazo anual</option>
                                 <option value="1">1 año</option>
                                 <option value="2">2 años</option>
@@ -113,7 +113,8 @@
                             </select>
 
 
-                            <select class="custom-select" name="plazo" id="select-mensual" style="display: none;" required>
+
+                            <select class="custom-select" name="plazoCorto" id="select-mensual" style="display: none;" required>
                                 <option selected>Plazo mensual</option>
                                 <option value="1">1 mes</option>
                                 <option value="3">3 meses</option>

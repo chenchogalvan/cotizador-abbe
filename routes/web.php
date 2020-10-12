@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Mail\mailCotizador;
+use App\Exports\CotizadorExport;
 use Maatwebsite\Excel\Facades\Excel;
 
 
@@ -22,11 +23,26 @@ Route::get('/', function () {
 });
 
 
+Route::get('/fira', function () {
+    return view('fira');
+})->name('fira');
+
 Route::post('/corizador', function (Request $request) {
 
     setlocale(LC_MONETARY, 'es_MX');
 
-    $cantidad = $request->get('plazo');
+
+
+    if ($request->get('tipoCredito') == 'corto') {
+        $cantidad = $request->get('plazoCorto');
+    }else{
+        $cantidad = $request->get('plazoLargo');
+    }
+
+
+
+
+
     $fechaDisp = $request->get('fechaDisp');
     $montoDisp = $request->get('montoDisp');
 
@@ -40,11 +56,11 @@ Route::post('/corizador', function (Request $request) {
 
 
     //Creamos el for para la cantidad de meses
-    for ($i=0; $i < $cantidad; $i++) {
+    /*for ($i=0; $i < $cantidad; $i++) {
 
         $fechaDisp = date("d-M-Y",strtotime($fechaDisp));
 
-        $capital = $montoDisp / $request->get('plazo');
+        $capital = $montoDisp / $cantidad;
         $impuesto = (($montoDisp*19.0)/360)*350;
         $pago = $montoDisp + $impuesto;
         $saldoFinal = $montoDisp - $capital;
@@ -67,20 +83,22 @@ Route::post('/corizador', function (Request $request) {
         $totalIntereses = $totalIntereses + $impuesto;
         $totalPago = $totalPago + $pago;
 
-    }
+    }*/
 
-    foreach ($tabla as $key => $value) {
-        $tabla['tabla'][$key] = (object) $value;
-    }
+    // foreach ($tabla as $key => $value) {
+    //     $tabla['tabla'][$key] = (object) $value;
+    // }
     //return $tabla['tabla'];
 
     //return $tabla;
     //$tabla = json_encode($tabla);
-    //return Excel::download(new Collection($tabla), 'users.xlsx');
+    $excel =  Excel::download(new CotizadorExport($cantidad, $fechaDisp, $montoDisp, $totalIntereses, $totalPago), 'users.xlsx')->getFile();
 
-    Mail::to($request->correo)->send(new mailCotizador($tabla, $totalIntereses, $totalPago));
+    Mail::to($request->correo)->send( new mailCotizador($excel));
 
     //echo 'Total Intereses: '.$totalIntereses.'<br>'.'Total pago: '.$totalPago;
-    return "Hemos enviado el cotizador a tu correo electronico";
+    //return "Hemos enviado el cotizador a tu correo electronico";
+        return 'Correcto';
+    //return view('tabla', compact(['cantidad'], ['fechaDisp'], ['montoDisp'], ['totalIntereses'], ['totalPago']));
 
 })->name('corizador');
