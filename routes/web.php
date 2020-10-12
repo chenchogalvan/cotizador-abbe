@@ -23,7 +23,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/fira', function () {
+Route::get('/agrocostos-interactivo ', function () {
     return view('fira');
 })->name('fira');
 
