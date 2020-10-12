@@ -1,0 +1,808 @@
+
+[{
+    "Estado": "AGUASCALIENTES",
+    "PV": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": true,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    },
+    "OI": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": false,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": false,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    }
+}, {
+    "Estado": "BAJA CALIFORNIA",
+    "PV": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": true,
+        "Sequia": false,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    },
+    "OI": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": true,
+        "Incendios": true,
+        "Onda Cálida": true,
+        "Sequia": false,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    }
+}, {
+    "Estado": "BAJA CALIFORNIA SUR",
+    "PV": {
+        "Bajas Temperaturas": true,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": false,
+        "Heladas": true,
+        "Incendios": true,
+        "Onda Cálida": true,
+        "Sequia": false,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    },
+    "OI": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": true,
+        "Incendios": true,
+        "Onda Cálida": true,
+        "Sequia": false,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    }
+}, {
+    "Estado": "CAMPECHE",
+    "PV": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": false,
+        "Heladas": false,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": true,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    },
+    "OI": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": false,
+        "Heladas": false,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": false,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    }
+}, {
+    "Estado": "COAHUILA DE ZARAGOZA",
+    "PV": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": true,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    },
+    "OI": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": false,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": true,
+        "Sequia": false,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    }
+}, {
+    "Estado": "COLIMA",
+    "PV": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": false,
+        "Heladas": false,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": true,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    },
+    "OI": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": false,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": false,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    }
+}, {
+    "Estado": "CHIAPAS",
+    "PV": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": false,
+        "Heladas": false,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": true,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    },
+    "OI": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": false,
+        "Heladas": false,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": false,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    }
+}, {
+    "Estado": "CHIHUAHUA",
+    "PV": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": true,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    },
+    "OI": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": false,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    }
+}, {
+    "Estado": "DURANGO",
+    "PV": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": true,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    },
+    "OI": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": false,
+        "Granizo": true,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": false,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    }
+}, {
+    "Estado": "GUANAJUATO",
+    "PV": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": true,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    },
+    "OI": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": false,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    }
+}, {
+    "Estado": "GUERRERO",
+    "PV": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": false,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": true,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    },
+    "OI": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": false,
+        "Heladas": false,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": false,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    }
+}, {
+    "Estado": "HIDALGO",
+    "PV": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": true,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    },
+    "OI": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": false,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": false,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    }
+}, {
+    "Estado": "JALISCO",
+    "PV": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": true,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    },
+    "OI": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": false,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    }
+}, {
+    "Estado": "EDO MEXICO",
+    "PV": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": true,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    },
+    "OI": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": false,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    }
+}, {
+    "Estado": "MICHOACAN",
+    "PV": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": true,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    },
+    "OI": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": false,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    }
+}, {
+    "Estado": "MORELOS",
+    "PV": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": false,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": true,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    },
+    "OI": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": false,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": false,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    }
+}, {
+    "Estado": "NAYARIT",
+    "PV": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": false,
+        "Heladas": false,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": true,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    },
+    "OI": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": false,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    }
+}, {
+    "Estado": "NUEVO LEON",
+    "PV": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": false,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": true,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    },
+    "OI": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": false,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    }
+}, {
+    "Estado": "OAXACA",
+    "PV": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": true,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    },
+    "OI": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": false,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    }
+}, {
+    "Estado": "PUEBLA",
+    "PV": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": true,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    },
+    "OI": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": false,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    }
+}, {
+    "Estado": "QUERETARO",
+    "PV": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": true,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    },
+    "OI": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": false,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": false,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    }
+}, {
+    "Estado": "QUINTANA ROO",
+    "PV": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": false,
+        "Heladas": false,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": true,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    },
+    "OI": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": false,
+        "Heladas": false,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": false,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    }
+}, {
+    "Estado": "SAN LUIS POTOSI",
+    "PV": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": true,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    },
+    "OI": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": false,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    }
+}, {
+    "Estado": "SINALOA",
+    "PV": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": false,
+        "Heladas": false,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": true,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    },
+    "OI": {
+        "Bajas Temperaturas": true,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": true,
+        "Incendios": true,
+        "Onda Cálida": false,
+        "Sequia": false,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    }
+}, {
+    "Estado": "SONORA",
+    "PV": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": false,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": true,
+        "Sequia": false,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    },
+    "OI": {
+        "Bajas Temperaturas": true,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": true,
+        "Incendios": true,
+        "Onda Cálida": true,
+        "Sequia": false,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    }
+}, {
+    "Estado": "TABASCO",
+    "PV": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": false,
+        "Heladas": false,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": true,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    },
+    "OI": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": false,
+        "Heladas": false,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": false,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    }
+}, {
+    "Estado": "TAMAULIPAS",
+    "PV": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": false,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": true,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    },
+    "OI": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": false,
+        "Incendios": true,
+        "Onda Cálida": true,
+        "Sequia": true,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    }
+}, {
+    "Estado": "TLAXCALA",
+    "PV": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": true,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    },
+    "OI": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": false,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    }
+}, {
+    "Estado": "VERACRUZ",
+    "PV": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": false,
+        "Heladas": false,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": true,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    },
+    "OI": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": false,
+        "Heladas": false,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": false,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    }
+}, {
+    "Estado": "YUCATAN",
+    "PV": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": false,
+        "Heladas": false,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": true,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    },
+    "OI": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": false,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": false,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    }
+}, {
+    "Estado": "ZACATECAS",
+    "PV": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": true,
+        "Heladas": true,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": true,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    },
+    "OI": {
+        "Bajas Temperaturas": false,
+        "Exceso de Humedad  e Inundación (Lluvias)": true,
+        "Falta de Piso": true,
+        "Granizo": false,
+        "Heladas": false,
+        "Incendios": false,
+        "Onda Cálida": false,
+        "Sequia": false,
+        "Vientos (Fuertes)": true,
+        "Plagas y Enfermedades": true
+    }
+}]
