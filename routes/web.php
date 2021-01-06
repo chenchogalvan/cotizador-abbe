@@ -27,78 +27,90 @@ Route::get('/agrocostos-interactivo ', function () {
     return view('fira');
 })->name('fira');
 
-Route::post('/corizador', function (Request $request) {
+Route::post('/cotizador', function (Request $request) {
 
     setlocale(LC_MONETARY, 'es_MX');
 
-
-
-    if ($request->get('tipoCredito') == 'corto') {
-        $cantidad = $request->get('plazoCorto');
-    }else{
-        $cantidad = $request->get('plazoLargo');
+    if ($request->get('tipoCredito') == 'mensual') {
+        $periocidad = 12;
+        $intervalo = 1;
+    }else if ($request->get('tipoCredito') == 'trimestral') {
+        $periocidad = 4;
+        $intervalo = 3;
+    }else if ($request->get('tipoCredito') == 'semestral') {
+        $periocidad = 2;
+        $intervalo = 6;
+    }else if ($request->get('tipoCredito') == 'anual') {
+        $periocidad = 1;
+        $intervalo = 12;
     }
 
-
-
-
-
+    $plazo = $request->get('plazo');
+    $npagos = $request->get('npagos');
     $fechaDisp = $request->get('fechaDisp');
+    $fechaOrigen = $fechaDisp;
     $montoDisp = $request->get('montoDisp');
+    $pagoinicial = $montoDisp;
 
     $totalIntereses = 0;
     $totalPago = 0;
+    $cont = 0;
+    $tabla;
 
-    // foreach ($cantidad as $cantidad) {
-    //     return $cantidad.'<br>';
-    // }
+    for ($i=0; $i < $npagos; $i++) {
 
-
-
-    //Creamos el for para la cantidad de meses
-    /*for ($i=0; $i < $cantidad; $i++) {
-
+        //Mostramos la fecha en el formato
         $fechaDisp = date("d-M-Y",strtotime($fechaDisp));
+        //Iniciamos el contador del intervalo
+        $inter = $intervalo * $cont + 1;
+        //Hacemos la suma de la fecha origen + el intervalo seleccionado por el periodo de pago
+        $fechaPago = date("d-M-Y",strtotime($fechaOrigen."+". $inter . "month"));
 
-        $capital = $montoDisp / $cantidad;
-        $impuesto = (($montoDisp*19.0)/360)*350;
-        $pago = $montoDisp + $impuesto;
+
+        $interes = ($montoDisp * 0.17)/$periocidad;
+
+
+
+
+
+        //Calcular pago
+        $in = 17/$periocidad;
+        $C = $pagoinicial;
+        $I = $in/100;
+        $N = $npagos;
+        $pago = $C * (pow((1+$I), $N) * $I) /  (pow((1+$I), $N) - 1);
+        $pago = round($pago, 2);
+
+        $capital = $pago - $interes;
+        $capital = round($capital);
         $saldoFinal = $montoDisp - $capital;
+        $saldoFinal = round($saldoFinal);
 
+        //echo $fechaPago. " | Saldo inicial:" .$montoDisp. " | Pago: ".round($pago, 2)." | Capital:". round($capital) ." |"  ."Intereses: " . $interes . " | Saldo final:". round($saldoFinal) ."<br>";
 
         $tabla[] = [
-            'Columna 1' => $fechaDisp,
-            'Columna 2' => date("d-M-Y", strtotime($fechaDisp."+ 350 days")),
-            'Columna 4' =>$montoDisp,
-            'Columna 5' =>$capital,
-            'Columna 6' =>$impuesto,
-            'Columna 7' =>$pago,
-            'Columna 8' =>$saldoFinal
+            'fechaPago' => $fechaPago,
+            'montoDisp' =>$montoDisp,
+            'pago' =>$pago,
+            'capital' =>$capital,
+            'interes' =>$interes,
+            'saldoFinal' =>$saldoFinal
         ];
 
+        $montoDisp = round($saldoFinal);
+        $cont = $cont+1;
+    }
 
-        $fechaDisp = date("d-M-Y",strtotime($fechaDisp."+ 350 days"));
-        $montoDisp = $saldoFinal;
+    //$excel =  Excel::download(new CotizadorExport($fechaPago,$montoDisp,$pago,$capital,$interes,$saldoFinal), 'users.xlsx')->getFile();
+    //return $excel;
 
-        $totalIntereses = $totalIntereses + $impuesto;
-        $totalPago = $totalPago + $pago;
 
-    }*/
-
-    // foreach ($tabla as $key => $value) {
-    //     $tabla['tabla'][$key] = (object) $value;
-    // }
-    //return $tabla['tabla'];
-
-    //return $tabla;
-    //$tabla = json_encode($tabla);
-    $excel =  Excel::download(new CotizadorExport($cantidad, $fechaDisp, $montoDisp, $totalIntereses, $totalPago), 'users.xlsx')->getFile();
-
-    Mail::to($request->correo)->send( new mailCotizador($excel));
+    return view('tabla', compact('tabla'));
+    //Mail::to($request->correo)->send( new mailCotizador($excel));
 
     //echo 'Total Intereses: '.$totalIntereses.'<br>'.'Total pago: '.$totalPago;
     //return "Hemos enviado el cotizador a tu correo electronico";
-        return 'Correcto';
+    //return 'Correcto';
     //return view('tabla', compact(['cantidad'], ['fechaDisp'], ['montoDisp'], ['totalIntereses'], ['totalPago']));
 
-})->name('corizador');
+})->name('cotizador');

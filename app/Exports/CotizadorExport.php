@@ -12,29 +12,34 @@ class CotizadorExport implements Fromview
     * @return \Illuminate\Support\Collection
     */
 
-    public $cantidad;
-    public $fechaDisp;
+    public $fechaPago;
     public $montoDisp;
-    public $totalIntereses;
-    public $totalPago;
+    public $pago;
+    public $capital;
+    public $interes;
+    public $saldoFinal;
 
 
-    public function __construct($cantidad,$fechaDisp,$montoDisp,$totalIntereses,$totalPago)
+    public function __construct($fechaPago, $montoDisp, $pago, $capital, $interes, $saldoFinal)
     {
-        $this->cantidad = $cantidad;
-        $this->fechaDisp = $fechaDisp;
+
+        $this->fechaPago = $fechaPago;
         $this->montoDisp = $montoDisp;
-        $this->totalIntereses = $totalIntereses;
-        $this->totalPago = $totalPago;
+        $this->pago = $pago;
+        $this->capital = $capital;
+        $this->interes = $interes;
+        $this->saldoFinal = $saldoFinal;
     }
     public function view(): View
     {
         return view('tabla', [
-            'cantidad' => $this->cantidad,
-            'fechaDisp' => $this->fechaDisp,
-            'montoDisp' => $this->montoDisp,
-            'totalIntereses' => $this->totalIntereses,
-            'totalPago' => $this->totalPago
+
+            'fechaPago' => $fechaPago,
+            'montoDisp' => $montoDisp,
+            'pago' => $pago,
+            'capital' => $capital,
+            'interes' => $interes,
+            'saldoFinal' => $saldoFinal
         ]);
     }
 }

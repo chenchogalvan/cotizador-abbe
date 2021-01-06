@@ -42,7 +42,7 @@
 
             <div class="col-md-12">
 
-                <form class="needs-validation" method="POST" action="{{ route('corizador') }}">
+                <form class="needs-validation" method="POST" action="{{ route('cotizador') }}">
                     @csrf
                     <div class="row">
                         <h4 class="mb-3">Información del solicitante</h4>
@@ -63,8 +63,10 @@
                             <label for="firstName">Tipo de credito</label>
                             <select class="custom-select" name="tipoCredito" id="select-tipo-credito" required>
                                 <option selected>Selecciona tipo de credito</option>
-                                <option value="corto">Corto plazo (Menos de un año)</option>
-                                <option value="largo">Largo plazo (Más de un año)</option>
+                                <option value="mensual">Mensual</option>
+                                <option value="trimestral">Trimestral</option>
+                                <option value="semestral">Semestral</option>
+                                <option value="anual">Anual</option>
                             </select>
 
                     </div>
@@ -102,9 +104,9 @@
                         </div> --}}
 
                         <div class="col-md-12 mb-3">
-                            <label for="firstName">Plazo de linea</label>
-                            <select class="custom-select" name="plazoLargo" id="select-anual" required>
-                                <option selected>Plazo anual</option>
+                            <label for="firstName">Plazo (años)</label>
+                            <select class="custom-select" name="plazo" id="select-anual" required>
+                                <option selected>Selecciona un valor</option>
                                 <option value="1">1 año</option>
                                 <option value="2">2 años</option>
                                 <option value="3">3 años</option>
@@ -112,15 +114,19 @@
                                 <option value="5">5 años</option>
                             </select>
 
+                            <label for="firstName">N° Pagos</label>
+                            <input type="number" max="100" name="npagos" class="form-control" placeholder="">
 
 
-                            <select class="custom-select" name="plazoCorto" id="select-mensual" style="display: none;" required>
+
+
+                            {{-- <select class="custom-select" name="plazoCorto" id="select-mensual" style="display: none;" required>
                                 <option selected>Plazo mensual</option>
                                 <option value="1">1 mes</option>
                                 <option value="3">3 meses</option>
                                 <option value="6">6 meses</option>
                                 <option value="12">12 meses</option>
-                            </select>
+                            </select> --}}
 
                         </div>
                     </div>
