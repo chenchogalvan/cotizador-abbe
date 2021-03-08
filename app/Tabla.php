@@ -7,12 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Tabla extends Model
 {
     protected $fillable = [
-        'token',
+        '',
         'fechaPago',
         'montoDisp',
         'pago',
         'capital',
         'interes',
         'saldoFinal'
+    ];
+
+    protected $hidden = [
+        'id', 'token', 'created_at', 'updated_at'
     ];
 }
