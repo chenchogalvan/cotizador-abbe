@@ -45,22 +45,23 @@
                 <form class="needs-validation" method="POST" action="{{ route('cotizador') }}">
                     @csrf
 
-                    <div class="row">
-                        <h4 class="mb-3">Información del solicitante</h4>
-                        <div class="col-md-12 mb-3">
-                            <label for="firstName">Nombre</label>
-                            <input type="text" name="nombre" class="form-control" id="firstName" placeholder="" value=""
-                                required>
+                    <div id="paso1">
+                        <div class="row">
+                            <h4 class="mb-3">Información del solicitante</h4>
+                            <div class="col-md-12 mb-3">
+                                <label for="firstName">Nombre</label>
+                                <input type="text" name="nombre" class="form-control" id="firstName" placeholder=""
+                                    value="" required>
+                            </div>
+                            <div class="col-md-12 mb-3">
+                                <label for="firstName">Correo</label>
+                                <input type="text" name="correo" class="form-control" id="firstName" placeholder=""
+                                    value="" required>
+                            </div>
                         </div>
-                        <div class="col-md-12 mb-3">
-                            <label for="firstName">Correo</label>
-                            <input type="text" name="correo" class="form-control" id="firstName" placeholder="" value=""
-                                required>
-                        </div>
-                    </div>
 
 
-                    <div class="mb-3">
+                        <div class="mb-3">
                             <label for="firstName">Tipo de credito</label>
                             <select class="custom-select" name="tipoCredito" id="select-tipo-credito" required>
                                 <option selected>Selecciona tipo de credito</option>
@@ -70,43 +71,36 @@
                                 <option value="anual">Anual</option>
                             </select>
 
+                        </div>
+
+                        <button class="btn btn-primary btn-lg btn-block" id="btnContinuar">Continuar</button>
+
                     </div>
-                    <hr>
-                    <div class="mb-3">
-                        <label for="username">Fecha de disposición</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">@</span>
+
+                    <div id="paso2">
+                        <div class="mb-3">
+                            <label for="username">Fecha de disposición</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">@</span>
+                                </div>
+                                <input type="date" name="fechaDisp" class="form-control" id="email" placeholder="">
                             </div>
-                            <input type="date" name="fechaDisp" class="form-control" id="email" placeholder="">
-                        </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="email">Monto de disposición </label>
-                        <input type="number" max="12000000" name="montoDisp" class="form-control" id="email"
-                            placeholder="">
-                    </div>
-
-
-                    <div class="row">
-                        {{-- <div class="col-md-12 mb-3">
-                            <label for="firstName">Forma del pago de capital:</label>
-                            <input type="text" name="pagoCapital" class="form-control" id="firstName" value="anual"
-                                placeholder="" value="" readonly>
-
                         </div>
 
-                        <div class="col-md-12 mb-3">
-                            <label for="firstName">>Forma del pago de interes:</label>
-                            <input type="text" name="pagoInteres" class="form-control" id="firstName" value="anual"
-                                placeholder="" value="" readonly>
+                        <div class="mb-3">
+                            <label for="email">Monto de disposición </label>
+                            <input type="number" max="12000000" name="montoDisp" class="form-control" id="email"
+                                placeholder="">
+                        </div>
 
-                        </div> --}}
 
-                        <div class="col-md-12 mb-3">
-                            <label for="firstName">Plazo (años)</label>
-                            {{-- <select class="custom-select" name="plazo" id="select-anual" required>
+                        <div class="row">
+
+
+                            <div class="col-md-12 mb-3">
+                                <label for="firstName">Plazo (años)</label>
+                                {{-- <select class="custom-select" name="plazo" id="select-anual" required>
                                 <option selected>Selecciona un valor</option>
                                 <option value="1">1 año</option>
                                 <option value="2">2 años</option>
@@ -115,13 +109,13 @@
                                 <option value="5">5 años</option>
                             </select> --}}
 
-                            <label for="firstName">N° Pagos</label>
-                            <input type="number" max="100" name="npagos" class="form-control" placeholder="">
+                                <label for="firstName">N° Pagos</label>
+                                <input type="number" max="100" name="npagos" class="form-control" placeholder="">
 
 
 
 
-                            {{-- <select class="custom-select" name="plazoCorto" id="select-mensual" style="display: none;" required>
+                                {{-- <select class="custom-select" name="plazoCorto" id="select-mensual" style="display: none;" required>
                                 <option selected>Plazo mensual</option>
                                 <option value="1">1 mes</option>
                                 <option value="3">3 meses</option>
@@ -129,13 +123,13 @@
                                 <option value="12">12 meses</option>
                             </select> --}}
 
+                            </div>
                         </div>
-                    </div>
 
 
 
 
-                    <!--<div class="row">
+                        <!--<div class="row">
 
                         <h4 class="mb-3">Resultado del cotizador</h4>
 
@@ -179,7 +173,10 @@
                     </div>-->
 
 
-                    <button class="btn btn-primary btn-lg btn-block" type="submit">Solicitar</button>
+                    <button class="btn btn-secondary btn-lg btn-block" id="btnRegresar">Regresar</button>
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Solicitar cotización</button>
+
+                    </div>
 
                 </form>
             </div>
@@ -199,7 +196,6 @@
 
 
     <script>
-
         $('#select-tipo-credito').on('change', function(){
             if($('#select-tipo-credito').val() == 'corto'){
                 console.log('corto pago')
@@ -212,6 +208,22 @@
                 $('#select-mensual').css('display', 'none');
             }
         })
+
+
+        $( "#paso2" ).hide();
+
+
+        $("#btnContinuar").click(function () {
+            $("#paso2").show("slow");
+            $("#paso1").hide("slow");
+        });
+
+        $("#btnRegresar").click(function () {
+            $("#paso1").show("slow");
+            $("#paso2").hide("slow");
+        });
+
+
 
 
     </script>
