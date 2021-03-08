@@ -44,6 +44,7 @@
 
                 <form class="needs-validation" method="POST" action="{{ route('cotizador') }}">
                     @csrf
+
                     <div class="row">
                         <h4 class="mb-3">Información del solicitante</h4>
                         <div class="col-md-12 mb-3">
@@ -70,7 +71,7 @@
                             </select>
 
                     </div>
-
+                    <hr>
                     <div class="mb-3">
                         <label for="username">Fecha de disposición</label>
                         <div class="input-group">
@@ -87,7 +88,7 @@
                             placeholder="">
                     </div>
 
-                    <hr>
+
                     <div class="row">
                         {{-- <div class="col-md-12 mb-3">
                             <label for="firstName">Forma del pago de capital:</label>
@@ -105,14 +106,14 @@
 
                         <div class="col-md-12 mb-3">
                             <label for="firstName">Plazo (años)</label>
-                            <select class="custom-select" name="plazo" id="select-anual" required>
+                            {{-- <select class="custom-select" name="plazo" id="select-anual" required>
                                 <option selected>Selecciona un valor</option>
                                 <option value="1">1 año</option>
                                 <option value="2">2 años</option>
                                 <option value="3">3 años</option>
                                 <option value="4">4 años</option>
                                 <option value="5">5 años</option>
-                            </select>
+                            </select> --}}
 
                             <label for="firstName">N° Pagos</label>
                             <input type="number" max="100" name="npagos" class="form-control" placeholder="">

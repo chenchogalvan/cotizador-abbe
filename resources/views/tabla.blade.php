@@ -21,9 +21,9 @@
                 <tr>
                     <th scope="col">Fecha</th>
                     <th scope="col">Monto restante</th>
+                    <th scope="col">Pago</th>
                     <th scope="col">Capital</th>
-                    <th scope="col">Impuesto</th>
-                    <th scope="col">Cantidad a pagar</th>
+                    <th scope="col">Interes</th>
                     <th scope="col">Saldo final</th>
                 </tr>
             </thead>

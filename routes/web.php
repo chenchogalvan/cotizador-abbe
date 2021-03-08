@@ -3,8 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Mail\mailCotizador;
-use App\Exports\CotizadorExport;
+use App\Exports\TablasExport;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Tabla;
 
 
 /*
@@ -97,19 +98,34 @@ Route::post('/cotizador', function (Request $request) {
             'saldoFinal' =>$saldoFinal
         ];
 
+
+        $t = new Tabla;
+        $t->token = $request->get('_token');
+        $t->fechaPago = $fechaPago;
+        $t->montoDisp = $montoDisp;
+        $t->pago = $pago;
+        $t->capital = $capital;
+        $t->interes = $interes;
+        $t->saldoFinal = $saldoFinal;
+        $t->save();
+
         $montoDisp = round($saldoFinal);
         $cont = $cont+1;
     }
 
-    //$excel =  Excel::download(new CotizadorExport($fechaPago,$montoDisp,$pago,$capital,$interes,$saldoFinal), 'users.xlsx')->getFile();
-    //return $excel;
+    $token = $request->get('_token');
+    //return Tabla::where('token', $request->get('_token'))->get();
+
+    $excel =  Excel::download(new TablasExport($token), 'users.xlsx')->getFile();
+    //$excel =  Excel::download(new CotizadorExport($tabla), 'users.xlsx')->getFile();
+    $excel;
 
 
-    return view('tabla', compact('tabla'));
-    //Mail::to($request->correo)->send( new mailCotizador($excel));
+    //return view('tabla', compact('tabla', 'excel'));
+    Mail::to($request->correo)->send( new mailCotizador($excel));
 
     //echo 'Total Intereses: '.$totalIntereses.'<br>'.'Total pago: '.$totalPago;
-    //return "Hemos enviado el cotizador a tu correo electronico";
+    return "Hemos enviado el cotizador a tu correo electronico";
     //return 'Correcto';
     //return view('tabla', compact(['cantidad'], ['fechaDisp'], ['montoDisp'], ['totalIntereses'], ['totalPago']));
 
