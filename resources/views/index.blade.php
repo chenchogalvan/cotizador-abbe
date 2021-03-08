@@ -109,8 +109,8 @@
                                 <option value="5">5 años</option>
                             </select> --}}
 
-                                <label for="firstName">N° Pagos</label>
-                                <input type="number" max="100" name="npagos" class="form-control" placeholder="">
+                                <label for="firstName">Plazo del crédito (Años)</label>
+                                <input type="number" max="20" name="npagos" class="form-control" placeholder="">
 
 
 

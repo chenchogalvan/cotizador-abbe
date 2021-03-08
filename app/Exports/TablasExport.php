@@ -7,7 +7,7 @@ use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
 
-class TablasExport implements FromCollection
+class TablasExport implements FromCollection, WithHeadings
 {
     /**
     * @return \Illuminate\Support\Collection
@@ -27,8 +27,16 @@ class TablasExport implements FromCollection
         return Tabla::where('token', $this->token)->get();
     }
 
-    public function headings()
+
+    public function headings(): array
     {
-        return ["Fecha de pago", "Saldo Inicial", "Pago", "Capital", "Intereses", "Saldo Inicial"];
+        return [
+            'Fecha de pago',
+            'Saldo Inicial',
+            'Pago',
+            'Capital',
+            'Intereses',
+            'Saldo Final'
+        ];
     }
 }
