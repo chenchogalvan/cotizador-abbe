@@ -100,7 +100,6 @@
 
 
                             <div class="col-md-12 mb-3">
-                                <label for="firstName">Plazo (años)</label>
                                 {{-- <select class="custom-select" name="plazo" id="select-anual" required>
                                 <option selected>Selecciona un valor</option>
                                 <option value="1">1 año</option>
