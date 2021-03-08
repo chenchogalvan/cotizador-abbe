@@ -44,6 +44,7 @@
 
                 <form class="needs-validation" method="POST" action="{{ route('cotizador') }}">
                     @csrf
+                    <input type="hidden" name="tokenL" value="{{ rand(0,1000000000000000) }}">
 
                     <div id="paso1">
                         <div class="row">
@@ -73,7 +74,7 @@
 
                         </div>
 
-                        <button class="btn btn-primary btn-lg btn-block" id="btnContinuar">Continuar</button>
+                        <input type="button" class="btn btn-primary btn-lg btn-block" id="btnContinuar" value="Continuar">
 
                     </div>
 
@@ -173,7 +174,7 @@
                     </div>-->
 
 
-                    <button class="btn btn-secondary btn-lg btn-block" id="btnRegresar">Regresar</button>
+                        <input type="button" class="btn btn-secondary btn-lg btn-block" id="btnRegresar" value="Regresar">
                         <button class="btn btn-primary btn-lg btn-block" type="submit">Solicitar cotización</button>
 
                     </div>
@@ -214,13 +215,13 @@
 
 
         $("#btnContinuar").click(function () {
-            $("#paso2").show("slow");
-            $("#paso1").hide("slow");
+            $("#paso2").show();
+            $("#paso1").hide();
         });
 
         $("#btnRegresar").click(function () {
-            $("#paso1").show("slow");
-            $("#paso2").hide("slow");
+            $("#paso1").show();
+            $("#paso2").hide();
         });
 
 

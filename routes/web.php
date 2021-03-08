@@ -100,7 +100,7 @@ Route::post('/cotizador', function (Request $request) {
 
 
         $t = new Tabla;
-        $t->token = $request->get('_token');
+        $t->token = $request->get('tokenL');
         $t->fechaPago = $fechaPago;
         $t->montoDisp = $montoDisp;
         $t->pago = $pago;
@@ -113,19 +113,20 @@ Route::post('/cotizador', function (Request $request) {
         $cont = $cont+1;
     }
 
-    $token = $request->get('_token');
-    //return Tabla::where('token', $request->get('_token'))->get();
+    $token = $request->get('tokenL');
+    //return Tabla::where('token', $request->get('tokenL'))->get();
 
     $excel =  Excel::download(new TablasExport($token), 'users.xlsx')->getFile();
     //$excel =  Excel::download(new CotizadorExport($tabla), 'users.xlsx')->getFile();
     $excel;
 
 
-    //return view('tabla', compact('tabla', 'excel'));
     Mail::to($request->correo)->send( new mailCotizador($excel));
 
+    return view('tabla', compact('tabla', 'excel'));
+
     //echo 'Total Intereses: '.$totalIntereses.'<br>'.'Total pago: '.$totalPago;
-    return "Hemos enviado el cotizador a tu correo electronico";
+    //return "Hemos enviado el cotizador a tu correo electronico";
     //return 'Correcto';
     //return view('tabla', compact(['cantidad'], ['fechaDisp'], ['montoDisp'], ['totalIntereses'], ['totalPago']));
 
