@@ -4,6 +4,8 @@ namespace App\Exports;
 
 use App\Tabla;
 use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Concerns\WithHeadings;
+
 
 class TablasExport implements FromCollection
 {
