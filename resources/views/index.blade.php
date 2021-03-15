@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -25,8 +26,6 @@
             }
         }
     </style>
-    <!-- Custom styles for this template -->
-    <link href="form-validation.css" rel="stylesheet">
 </head>
 
 <body>
@@ -61,11 +60,28 @@
                             </div>
                         </div>
 
+                        <div class="mb-3">
+                            <label for="TipoCredito">Tipo de crédito</label>
+                        </div>
+                        <div class="my-3">
+                            <div class="form-check">
+                                <input id="creditoCorriente" value="creditoCorriente" name="tipoCredito" type="radio" class="form-check-input"
+                                    required>
+                                <label class="form-check-label" for="creditoCorriente">Crédito Cuenta corriente (Capital de
+                                    trabajo)</label>
+                            </div>
+                            <div class="form-check">
+                                <input id="creditoSimple" value="creditoSimple" name="tipoCredito" type="radio" class="form-check-input"
+                                    required>
+                                <label class="form-check-label" for="creditoSimple">Credito Simple (Compra de
+                                    maquinaria, equipo e infraestrcutrua)</label>
+                            </div>
+                        </div>
+
 
                         <div class="mb-3">
-                            <label for="firstName">Tipo de credito</label>
-                            <select class="custom-select" name="tipoCredito" id="select-tipo-credito" required>
-                                <option selected>Selecciona tipo de credito</option>
+                            <label for="firstName">Periodicidad de pago </label>
+                            <select class="form-select" name="periocidadPago" id="select-tipo-credito">
                                 <option value="mensual">Mensual</option>
                                 <option value="trimestral">Trimestral</option>
                                 <option value="semestral">Semestral</option>
@@ -74,7 +90,7 @@
 
                         </div>
 
-                        <input type="button" class="btn btn-primary btn-lg btn-block" id="btnContinuar" value="Continuar">
+                        <input type="button" class="btn btn-primary btn-lg" id="btnContinuar" value="Continuar">
 
                     </div>
 
@@ -100,28 +116,16 @@
 
 
                             <div class="col-md-12 mb-3">
-                                {{-- <select class="custom-select" name="plazo" id="select-anual" required>
-                                <option selected>Selecciona un valor</option>
-                                <option value="1">1 año</option>
-                                <option value="2">2 años</option>
-                                <option value="3">3 años</option>
-                                <option value="4">4 años</option>
-                                <option value="5">5 años</option>
-                            </select> --}}
-
-                                <label for="firstName">Plazo del crédito (Años)</label>
-                                <input type="number" max="20" name="npagos" class="form-control" placeholder="">
 
 
-
-
-                                {{-- <select class="custom-select" name="plazoCorto" id="select-mensual" style="display: none;" required>
-                                <option selected>Plazo mensual</option>
-                                <option value="1">1 mes</option>
-                                <option value="3">3 meses</option>
-                                <option value="6">6 meses</option>
-                                <option value="12">12 meses</option>
-                            </select> --}}
+                                <label for="firstName">Plazo del crédito (Meses)</label>
+                                <select name="npagos" id="npagos" class="custom-select">
+                                    <option value="12">12 Meses</option>
+                                    <option value="24">24 Meses</option>
+                                    <option value="36">36 Meses</option>
+                                    <option value="48">48 Meses</option>
+                                    <option value="60">60 Meses</option>
+                                </select>
 
                             </div>
                         </div>
@@ -173,7 +177,8 @@
                     </div>-->
 
 
-                        <input type="button" class="btn btn-secondary btn-lg btn-block" id="btnRegresar" value="Regresar">
+                        <input type="button" class="btn btn-secondary btn-lg btn-block" id="btnRegresar"
+                            value="Regresar">
                         <button class="btn btn-primary btn-lg btn-block" type="submit">Solicitar cotización</button>
 
                     </div>
@@ -186,13 +191,11 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
-    <script>
-        window.jQuery || document.write('<script src="/docs/4.5/assets/js/vendor/jquery.slim.min.js"><\/script>')
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
     </script>
-    <script src="/docs/4.5/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-LtrjvnR4Twt/qOuYxE721u19sVFLVSA4hf/rRt6PrZTmiPltdZcI7q7PXQBYTKyf" crossorigin="anonymous">
-    </script>
-    <script src="form-validation.js"></script>
+
 
 
     <script>
@@ -223,6 +226,41 @@
             $("#paso2").hide();
         });
 
+
+        $('input:radio[name="tipoCredito"]').change(
+    function(){
+        if (this.checked && this.value == 'creditoSimple') {
+            console.log("Simple")
+            $('#npagos').prop('disabled', false);
+            $('#select-tipo-credito').prop('disabled', false);
+
+            npagos = $( "#npagos option:selected" ).text();
+            tipoCredito = $( "#select-tipo-credito option:selected" ).text();
+            console.log(npagos+ ' | ' + tipoCredito)
+
+
+        }
+        if(this.checked && this.value == 'creditoCorriente'){
+            console.log("Corriente")
+            $("#npagos").prop("selectedIndex", 0);
+            $("#select-tipo-credito").prop("selectedIndex", 0);
+
+            $('#npagos').prop('disabled', true);
+            $('#select-tipo-credito').prop('disabled', true);
+
+            npagos = $( "#npagos option:selected" ).text();
+            tipoCredito = $( "#select-tipo-credito option:selected" ).text();
+            console.log(npagos+ ' | ' + tipoCredito)
+
+
+        }
+    });
+
+
+
+    //TODO
+    //Agregar el % de manera informativa
+    //Cambiar de manera automatica el npagos dependiendo del tipo de credito
 
 
 

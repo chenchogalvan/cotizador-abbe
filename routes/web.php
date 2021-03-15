@@ -32,18 +32,28 @@ Route::post('/cotizador', function (Request $request) {
 
     setlocale(LC_MONETARY, 'es_MX');
 
-    if ($request->get('tipoCredito') == 'mensual') {
+    if ($request->get('periocidadPago') == 'mensual') {
         $periocidad = 12;
         $intervalo = 1;
-    }else if ($request->get('tipoCredito') == 'trimestral') {
+    }else if ($request->get('periocidadPago') == 'trimestral') {
         $periocidad = 4;
         $intervalo = 3;
-    }else if ($request->get('tipoCredito') == 'semestral') {
+    }else if ($request->get('periocidadPago') == 'semestral') {
         $periocidad = 2;
         $intervalo = 6;
-    }else if ($request->get('tipoCredito') == 'anual') {
+    }else if ($request->get('periocidadPago') == 'anual') {
         $periocidad = 1;
         $intervalo = 12;
+    }
+
+    if ($request->get('tipoCredito') == 'creditoCorriente') {
+        $npagos = '12';
+        $periocidad = 12;
+        $intervalo = 1;
+        // return $npagos . '  |   '. $periocidad.' | '. $intervalo;
+    }else if($request->get('tipoCredito') == 'creditoSimple'){
+        $npagos = $request->get('npagos');
+        // return $npagos . '  |   '. $periocidad.' | '. $intervalo;
     }
 
     $plazo = $request->get('plazo');
@@ -56,8 +66,9 @@ Route::post('/cotizador', function (Request $request) {
     $totalIntereses = 0;
     $totalPago = 0;
     $cont = 0;
-    $tabla;
+    // $tabla;
 
+    //Maximo de 60 minimo de 12- Opciones de plazo: multiplos de 12 de 12 hasta 60
     for ($i=0; $i < $npagos; $i++) {
 
         //Mostramos la fecha en el formato
