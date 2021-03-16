@@ -66,7 +66,7 @@ Route::post('/cotizador', function (Request $request) {
     $totalIntereses = 0;
     $totalPago = 0;
     $cont = 0;
-    // $tabla;
+    $tabla;
 
     //Maximo de 60 minimo de 12- Opciones de plazo: multiplos de 12 de 12 hasta 60
     for ($i=0; $i < $npagos; $i++) {
