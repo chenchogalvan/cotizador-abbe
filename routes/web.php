@@ -32,6 +32,8 @@ Route::post('/cotizador', function (Request $request) {
 
     setlocale(LC_MONETARY, 'es_MX');
 
+    // return $request->all();
+
     if ($request->get('periocidadPago') == 'mensual') {
         $periocidad = 12;
         $intervalo = 1;
@@ -57,7 +59,7 @@ Route::post('/cotizador', function (Request $request) {
     }
 
     $plazo = $request->get('plazo');
-    $npagos = $request->get('npagos');
+    // $npagos = $request->get('npagos');
     $fechaDisp = $request->get('fechaDisp');
     $fechaOrigen = $fechaDisp;
     $montoDisp = $request->get('montoDisp');
@@ -67,6 +69,8 @@ Route::post('/cotizador', function (Request $request) {
     $totalPago = 0;
     $cont = 0;
     $tabla;
+
+
 
     //Maximo de 60 minimo de 12- Opciones de plazo: multiplos de 12 de 12 hasta 60
     for ($i=0; $i < $npagos; $i++) {

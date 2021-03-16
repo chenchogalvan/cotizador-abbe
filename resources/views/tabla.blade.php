@@ -14,11 +14,12 @@
 
 
 
-    <h3>Esta misma tabla fue enviada por correo electornico.</h3>
 
 
     <main class="container">
-        <table class="table">
+    <h3>El % de interes se calcula con el 17%. Esta misma tabla fue enviada por correo electornico.</h3>
+
+        <table class="table" style="margin-top:50px;">
             <thead>
                 <tr>
                     <th scope="col">Fecha</th>
