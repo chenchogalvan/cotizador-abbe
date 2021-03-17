@@ -91,14 +91,15 @@ Route::post('/cotizador', function (Request $request) {
         $fechaPago = date("d-M-Y",strtotime($fechaOrigen."+". $inter . "month"));
 
 
-        $interes = ($montoDisp * 0.17)/$periocidad;
+        $interes = ($montoDisp * 0.19)/$periocidad;
 
 
 
 
 
         //Calcular pago
-        $in = 17/$periocidad;
+        // $in = 17/$periocidad;
+        $in = 19/$periocidad;
         $C = $pagoinicial;
         $I = $in/100;
         $N = $npagos;

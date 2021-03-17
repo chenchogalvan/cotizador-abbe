@@ -17,7 +17,7 @@
 
 
     <main class="container">
-    <h3>El % de interes se calcula con el 17%. Esta misma tabla fue enviada por correo electornico.</h3>
+    <h3>La presente proyección se calcula con una tasa del 19% anual fija para fines informativos. <br>La tasa de interés podrá ajustarse de acuerdo al análisis de riesgos<br>Esta misma tabla fue enviada por correo electornico.</h3>
     <h4>El total del credito a pagar es de ${{ round($pagoTotal) }}</h4>
 
         <table class="table" style="margin-top:50px;">
@@ -51,6 +51,7 @@
 
             </tbody>
         </table>
+        <a class="btn btn-primary btn-lg btn-block" href="{{ url()->previous() }}">Regresar</a>
     </main>
 
     <!-- Optional JavaScript; choose one of the two! -->
