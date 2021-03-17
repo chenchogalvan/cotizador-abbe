@@ -18,6 +18,7 @@
 
     <main class="container">
     <h3>El % de interes se calcula con el 17%. Esta misma tabla fue enviada por correo electornico.</h3>
+    <h4>El total del credito a pagar es de {{ round($pagoTotal) }}</h4>
 
         <table class="table" style="margin-top:50px;">
             <thead>

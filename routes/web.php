@@ -49,9 +49,17 @@ Route::post('/cotizador', function (Request $request) {
     }
 
     if ($request->get('tipoCredito') == 'creditoCorriente') {
-        $npagos = '12';
-        $periocidad = 12;
-        $intervalo = 1;
+        if ($request->get('periocidadPago') == 'mensual') {
+            $npagos = '1';
+        }else if ($request->get('periocidadPago') == 'trimestral') {
+            $npagos = '3';
+        }else if ($request->get('periocidadPago') == 'semestral') {
+            $npagos = '6';
+        }else if ($request->get('periocidadPago') == 'anual') {
+            $npagos = '12';
+        }
+        // $periocidad = 12;
+        // $intervalo = 1;
         // return $npagos . '  |   '. $periocidad.' | '. $intervalo;
     }else if($request->get('tipoCredito') == 'creditoSimple'){
         $npagos = $request->get('npagos');
@@ -128,6 +136,8 @@ Route::post('/cotizador', function (Request $request) {
         $cont = $cont+1;
     }
 
+    $pagoTotal = $pago * $npagos;
+
     $token = $request->get('tokenL');
     //return Tabla::where('token', $request->get('tokenL'))->get();
 
@@ -138,7 +148,7 @@ Route::post('/cotizador', function (Request $request) {
 
     Mail::to($request->correo)->send( new mailCotizador($excel));
 
-    return view('tabla', compact('tabla', 'excel'));
+    return view('tabla', compact('tabla', 'excel', 'pagoTotal'));
 
     //echo 'Total Intereses: '.$totalIntereses.'<br>'.'Total pago: '.$totalPago;
     //return "Hemos enviado el cotizador a tu correo electronico";

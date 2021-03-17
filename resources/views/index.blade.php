@@ -33,7 +33,7 @@
         <div class="py-5 text-center">
             <img class="d-block mx-auto mb-4" src="https://abbeco.com.mx/images/ABBE_logo_sm.jpg" alt="" width="auto"
                 height="72">
-            <h2>Formato de alta de credito</h2>
+            <h2>Formato de alta de credito. El % de interes se calcula con el 17%.</h2>
         </div>
 
         <div class="row">
@@ -232,7 +232,7 @@
         if (this.checked && this.value == 'creditoSimple') {
             console.log("Simple")
             $('#npagos').prop('disabled', false);
-            $('#select-tipo-credito').prop('disabled', false);
+            // $('#select-tipo-credito').prop('disabled', false);
 
             npagos = $( "#npagos option:selected" ).text();
             tipoCredito = $( "#select-tipo-credito option:selected" ).text();
@@ -243,10 +243,10 @@
         if(this.checked && this.value == 'creditoCorriente'){
             console.log("Corriente")
             $("#npagos").prop("selectedIndex", 0);
-            $("#select-tipo-credito").prop("selectedIndex", 0);
+            // $("#select-tipo-credito").prop("selectedIndex", 0);
 
             $('#npagos').prop('disabled', true);
-            $('#select-tipo-credito').prop('disabled', true);
+            // $('#select-tipo-credito').prop('disabled', true);
 
             npagos = $( "#npagos option:selected" ).text();
             tipoCredito = $( "#select-tipo-credito option:selected" ).text();
