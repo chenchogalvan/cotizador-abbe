@@ -50,13 +50,13 @@ Route::post('/cotizador', function (Request $request) {
 
     if ($request->get('tipoCredito') == 'creditoCorriente') {
         if ($request->get('periocidadPago') == 'mensual') {
-            $npagos = '1';
-        }else if ($request->get('periocidadPago') == 'trimestral') {
-            $npagos = '3';
-        }else if ($request->get('periocidadPago') == 'semestral') {
-            $npagos = '6';
-        }else if ($request->get('periocidadPago') == 'anual') {
             $npagos = '12';
+        }else if ($request->get('periocidadPago') == 'trimestral') {
+            $npagos = '4';
+        }else if ($request->get('periocidadPago') == 'semestral') {
+            $npagos = '2';
+        }else if ($request->get('periocidadPago') == 'anual') {
+            $npagos = '1';
         }
         // $periocidad = 12;
         // $intervalo = 1;
