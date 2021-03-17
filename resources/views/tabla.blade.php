@@ -18,7 +18,7 @@
 
     <main class="container">
     <h3>El % de interes se calcula con el 17%. Esta misma tabla fue enviada por correo electornico.</h3>
-    <h4>El total del credito a pagar es de {{ round($pagoTotal) }}</h4>
+    <h4>El total del credito a pagar es de ${{ round($pagoTotal) }}</h4>
 
         <table class="table" style="margin-top:50px;">
             <thead>
@@ -35,11 +35,11 @@
                 @foreach ($tabla as $t)
                 <tr>
                     <td style="">{{ $t['fechaPago'] }}</td>
-                    <td style="">{{ $t['montoDisp'] }}</td>
-                    <td style="">{{ $t['pago'] }}</td>
-                    <td style="">{{ $t['capital'] }}</td>
-                    <td style="">{{ $t['interes'] }}</td>
-                    <td style="">{{ $t['saldoFinal'] }}</td>
+                    <td style="">${{ $t['montoDisp'] }}</td>
+                    <td style="">${{ $t['pago'] }}</td>
+                    <td style="">${{ $t['capital'] }}</td>
+                    <td style="">${{ $t['interes'] }}</td>
+                    <td style="">${{ $t['saldoFinal'] }}</td>
                 <tr>
 
                 @endforeach
