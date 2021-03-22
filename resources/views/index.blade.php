@@ -33,7 +33,7 @@
         <div class="py-5 text-center">
             <img class="d-block mx-auto mb-4" src="https://abbeco.com.mx/images/ABBE_logo_sm.jpg" alt="" width="auto"
                 height="72">
-            <h2>Formato de alta de credito. El % de interes se calcula con el 17%.</h2>
+            <h2>Formato de alta de credito. El % de interes se calcula con el 19%.</h2>
         </div>
 
         <div class="row">
