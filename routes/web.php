@@ -6,6 +6,8 @@ use App\Mail\mailCotizador;
 use App\Exports\TablasExport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Tabla;
+use Barryvdh\DomPDF\Facade as PDF;
+
 
 
 /*
@@ -144,10 +146,37 @@ Route::post('/cotizador', function (Request $request) {
 
     $excel =  Excel::download(new TablasExport($token), 'users.xlsx')->getFile();
     //$excel =  Excel::download(new CotizadorExport($tabla), 'users.xlsx')->getFile();
-    $excel;
+    // $excel;
 
 
-    Mail::to($request->correo)->send( new mailCotizador($excel));
+    // Mail::to($request->correo)->send( new mailCotizador($excel));
+
+
+    $tabla = Tabla::where('token', $token)->get();
+
+    view()->share('tabla', $tabla);
+
+    $pdf = PDF::loadView('pdf', $tabla);
+
+    // return $tabla;
+
+
+    // return $pdf->download('archivo.pdf');
+    // return $pdf->download('archivo.pdf');
+
+    // Mail::to($request->correo)->send( new mailCotizador($excel));
+
+    $data["email"] = $request->correo;
+    $data["subject"] = "Abbe Agronegocios - Cotización";
+    $data["token"] = $request->get('tokenL');
+
+
+    //return $data;
+    Mail::send('mail', $data, function($message)use($data,$pdf) {
+        $message->to($data["email"], $data["email"])
+        ->subject($data["subject"])
+        ->attachData($pdf->output(), $data["token"]."-cotizacion.pdf");
+        });
 
     return view('tabla', compact('tabla', 'excel', 'pagoTotal'));
 
@@ -157,3 +186,5 @@ Route::post('/cotizador', function (Request $request) {
     //return view('tabla', compact(['cantidad'], ['fechaDisp'], ['montoDisp'], ['totalIntereses'], ['totalPago']));
 
 })->name('cotizador');
+
+
