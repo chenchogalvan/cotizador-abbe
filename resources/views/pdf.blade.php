@@ -11,6 +11,7 @@
           font-family: Arial, Helvetica, sans-serif;
           border-collapse: collapse;
           width: 100%;
+          font-size: 11px;
         }
 
         #customers td, #customers th {
@@ -83,11 +84,11 @@
                 @foreach ($tabla as $t)
                 <tr>
                     <td> {{ $t->fechaPago }} </td>
-                    <td> {{ $t->montoDisp }} </td>
-                    <td> {{ $t->pago }} </td>
-                    <td> {{ $t->capital }} </td>
-                    <td> {{ $t->interes }} </td>
-                    <td> {{ $t->saldoFinal }} </td>
+                    <td> ${{ $t->montoDisp }} </td>
+                    <td> ${{ $t->pago }} </td>
+                    <td> ${{ $t->capital }} </td>
+                    <td> ${{ $t->interes }} </td>
+                    <td> ${{ $t->saldoFinal }} </td>
                 </tr>
 
                 @endforeach
