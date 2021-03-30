@@ -69,6 +69,30 @@
     </footer>
 
     <main>
+        <table id="customers" style="margin-bottom:20px; width:300px;">
+            <thead>
+                <tr>
+                    <th colspan="2" scope="col">Resumen</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="">Pago mensual</td>
+                    <td style="">${{ round($totales[0]->pagoMensual) }}</td>
+                </tr>
+                <tr>
+                    <td style="">Intereses totales</td>
+                    <td style="">${{ round($totales[0]->totalInteres) }}</td>
+                </tr>
+
+                <tr>
+                    <td style="">Costo total del credito</td>
+                    <td style="">${{ round($totales[0]->costoTotal) }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+
         <table id="customers">
             <thead>
                 <tr>

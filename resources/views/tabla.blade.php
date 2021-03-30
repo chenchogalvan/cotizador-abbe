@@ -20,6 +20,36 @@
     <h3>La presente proyección se calcula con una tasa del 19% anual fija para fines informativos. <br>La tasa de interés podrá ajustarse de acuerdo al análisis de riesgos<br>Esta misma tabla fue enviada por correo electornico.</h3>
     {{-- <h4>El total del credito a pagar es de ${{ round($pagoTotal) }}</h4> --}}
 
+    <table class="table" style="margin-top:50px; width:300px;">
+        <thead>
+            <tr>
+                <th colspan="2" scope="col">Resumen</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="">Pago mensual</td>
+                <td style="">${{ round($totales[0]->totalInteres) }}</td>
+            <tr>
+            <tr>
+                <td style="">Intereses totales</td>
+                <td style="">${{ round($totales[0]->pagoMensual) }}</td>
+            <tr>
+
+            <tr>
+                <td style="">Costo total del credito</td>
+                <td style="">${{ round($totales[0]->costoTotal) }}</td>
+            <tr>
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+
         <table class="table" style="margin-top:50px;">
             <thead>
                 <tr>
