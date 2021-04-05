@@ -28,17 +28,17 @@
         </thead>
         <tbody>
             <tr>
-                <td style="">Pago mensual</td>
-                <td style="">${{ round($totales[0]->totalInteres) }}</td>
+                <td style="">Pago {{$tipoPeriocidad}}</td>
+                <td style="">${{ number_format(round($totales[0]->totalInteres)) }}</td>
             <tr>
             <tr>
                 <td style="">Intereses totales</td>
-                <td style="">${{ round($totales[0]->pagoMensual) }}</td>
+                <td style="">${{ number_format(round($totales[0]->pagoMensual)) }}</td>
             <tr>
 
             <tr>
                 <td style="">Costo total del credito</td>
-                <td style="">${{ round($totales[0]->costoTotal) }}</td>
+                <td style="">${{ number_format(round($totales[0]->costoTotal)) }}</td>
             <tr>
 
 
@@ -65,11 +65,11 @@
                 @foreach ($tabla as $t)
                 <tr>
                     <td style="">{{ $t['fechaPago'] }}</td>
-                    <td style="">${{ $t['montoDisp'] }}</td>
-                    <td style="">${{ $t['pago'] }}</td>
-                    <td style="">${{ $t['capital'] }}</td>
-                    <td style="">${{ $t['interes'] }}</td>
-                    <td style="">${{ $t['saldoFinal'] }}</td>
+                    <td style="">${{ number_format($t['montoDisp']) }}</td>
+                    <td style="">${{ number_format($t['pago']) }}</td>
+                    <td style="">${{ number_format($t['capital']) }}</td>
+                    <td style="">${{ number_format($t['interes']) }}</td>
+                    <td style="">${{ number_format($t['saldoFinal']) }}</td>
                 <tr>
 
                 @endforeach

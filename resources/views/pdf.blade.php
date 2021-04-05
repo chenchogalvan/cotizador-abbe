@@ -69,28 +69,10 @@
     </footer>
 
     <main>
-        <table id="customers" style="margin-bottom:20px; width:300px;">
-            <thead>
-                <tr>
-                    <th colspan="2" scope="col">Resumen</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style="">Pago mensual</td>
-                    <td style="">${{ round($totales[0]->pagoMensual) }}</td>
-                </tr>
-                <tr>
-                    <td style="">Intereses totales</td>
-                    <td style="">${{ round($totales[0]->totalInteres) }}</td>
-                </tr>
 
-                <tr>
-                    <td style="">Costo total del credito</td>
-                    <td style="">${{ round($totales[0]->costoTotal) }}</td>
-                </tr>
-            </tbody>
-        </table>
+        <p>La presente proyección se calcula con una tasa del 19% anual fija para fines informativos</p>
+            <p>La tasa de interés podrá ajustarse de acuerdo al análisis de riesgos</p>
+
 
 
         <table id="customers">
@@ -108,14 +90,37 @@
                 @foreach ($tabla as $t)
                 <tr>
                     <td> {{ $t->fechaPago }} </td>
-                    <td> ${{ $t->montoDisp }} </td>
-                    <td> ${{ $t->pago }} </td>
-                    <td> ${{ $t->capital }} </td>
-                    <td> ${{ $t->interes }} </td>
-                    <td> ${{ $t->saldoFinal }} </td>
+                    <td> ${{ number_format($t->montoDisp), 2 }} </td>
+                    <td> ${{ number_format($t->pago, 2) }} </td>
+                    <td> ${{ number_format($t->capital, 2) }} </td>
+                    <td> ${{ number_format($t->interes, 2) }} </td>
+                    <td> ${{ number_format($t->saldoFinal, 2) }} </td>
                 </tr>
 
                 @endforeach
+            </tbody>
+        </table>
+
+        <table id="customers" style="margin-top:20px; width:300px;">
+            <thead>
+                <tr>
+                    <th colspan="2" scope="col">Resumen</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="">Pago mensual</td>
+                    <td style="">${{ number_format(round($totales[0]->pagoMensual),2) }}</td>
+                </tr>
+                <tr>
+                    <td style="">Intereses totales</td>
+                    <td style="">${{ number_format(round($totales[0]->totalInteres),2) }}</td>
+                </tr>
+
+                <tr>
+                    <td style="">Costo total del credito</td>
+                    <td style="">${{ number_format(round($totales[0]->costoTotal),2) }}</td>
+                </tr>
             </tbody>
         </table>
     </main>

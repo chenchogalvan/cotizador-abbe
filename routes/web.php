@@ -40,26 +40,34 @@ Route::post('/cotizador', function (Request $request) {
     if ($request->get('periocidadPago') == 'mensual') {
         $periocidad = 12;
         $intervalo = 1;
+        $tipoPeriocidad = "Mensual";
     }else if ($request->get('periocidadPago') == 'trimestral') {
         $periocidad = 4;
         $intervalo = 3;
+        $tipoPeriocidad = "Trimestral";
     }else if ($request->get('periocidadPago') == 'semestral') {
         $periocidad = 2;
         $intervalo = 6;
+        $tipoPeriocidad = "Semestral";
     }else if ($request->get('periocidadPago') == 'anual') {
         $periocidad = 1;
         $intervalo = 12;
+        $tipoPeriocidad = "Anual";
     }
 
     if ($request->get('tipoCredito') == 'creditoCorriente') {
         if ($request->get('periocidadPago') == 'mensual') {
             $npagos = '12';
+            $tipoPeriocidad = "Mensual";
         }else if ($request->get('periocidadPago') == 'trimestral') {
             $npagos = '4';
+            $tipoPeriocidad = "Trimestral";
         }else if ($request->get('periocidadPago') == 'semestral') {
             $npagos = '2';
+            $tipoPeriocidad = "Semestral";
         }else if ($request->get('periocidadPago') == 'anual') {
             $npagos = '1';
+            $tipoPeriocidad = "Anual";
         }
         // $periocidad = 12;
         // $intervalo = 1;
@@ -170,7 +178,7 @@ Route::post('/cotizador', function (Request $request) {
 
     // view()->share('tabla', $tabla);
 
-    $pdf = PDF::loadView('pdf', compact('tabla', 'totales'));
+    $pdf = PDF::loadView('pdf', compact('tabla', 'totales', 'tipoPeriocidad'));
 
 
 
@@ -197,7 +205,7 @@ Route::post('/cotizador', function (Request $request) {
 
     // return 'Intereses: '.$totalIntereses.' | Pago Mensual:'. $pago .' | Costo total del credito: '.$pagoTotal;
 
-    return view('tabla', compact('tabla', 'excel', 'pagoTotal', 'totales'));
+    return view('tabla', compact('tabla', 'excel', 'pagoTotal', 'totales', 'tipoPeriocidad'));
 
     //echo 'Total Intereses: '.$totalIntereses.'<br>'.'Total pago: '.$totalPago;
     //return "Hemos enviado el cotizador a tu correo electronico";
