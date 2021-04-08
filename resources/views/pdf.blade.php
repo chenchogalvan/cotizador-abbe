@@ -70,7 +70,7 @@
 
     <main>
 
-        <p>La presente proyección se calcula con una tasa del 19% anual fija para fines informativos</p>
+        <p>Estimado <strong>{{ $totales[0]->nombre }}</strong>, la presente proyección se calcula con una tasa del 19% anual fija para fines informativos</p>
             <p>La tasa de interés podrá ajustarse de acuerdo al análisis de riesgos</p>
 
 

@@ -41,7 +41,7 @@
 
             <div class="col-md-12">
 
-                <form class="needs-validation" method="POST" action="{{ route('cotizador') }}">
+                <form class="needs-validation" method="POST" name="Form" action="{{ route('cotizador') }}">
                     @csrf
                     <input type="hidden" name="tokenL" value="{{ rand(0,1000000000000000) }}">
 
@@ -49,14 +49,12 @@
                         <div class="row">
                             <h4 class="mb-3">Información del solicitante</h4>
                             <div class="col-md-12 mb-3">
-                                <label for="firstName">Nombre</label>
-                                <input type="text" name="nombre" class="form-control" id="firstName" placeholder=""
-                                    value="" required>
+                                <label for="nombre">Nombre</label>
+                                <input type="text" name="nombre" class="form-control" id="nombre" placeholder="">
                             </div>
                             <div class="col-md-12 mb-3">
-                                <label for="firstName">Correo</label>
-                                <input type="text" name="correo" class="form-control" id="firstName" placeholder=""
-                                    value="" required>
+                                <label for="correo">Correo</label>
+                                <input type="text" name="correo" class="form-control" id="correo" placeholder="">
                             </div>
                         </div>
 
@@ -65,14 +63,12 @@
                         </div>
                         <div class="my-3">
                             <div class="form-check">
-                                <input id="creditoCorriente" value="creditoCorriente" name="tipoCredito" type="radio" class="form-check-input"
-                                    required>
+                                <input id="creditoCorriente" value="creditoCorriente" name="tipoCredito" type="radio" class="form-check-input">
                                 <label class="form-check-label" for="creditoCorriente">Crédito Cuenta corriente (Capital de
                                     trabajo)</label>
                             </div>
                             <div class="form-check">
-                                <input id="creditoSimple" value="creditoSimple" name="tipoCredito" type="radio" class="form-check-input"
-                                    required>
+                                <input id="creditoSimple" value="creditoSimple" name="tipoCredito" type="radio" class="form-check-input">
                                 <label class="form-check-label" for="creditoSimple">Credito Simple (Compra de
                                     maquinaria, equipo e infraestrcutrua)</label>
                             </div>
@@ -80,7 +76,7 @@
 
 
                         <div class="mb-3">
-                            <label for="firstName">Periodicidad de pago </label>
+                            <label for="periocidad">Periodicidad de pago </label>
                             <select class="form-select" name="periocidadPago" id="select-tipo-credito">
                                 <option value="mensual">Mensual</option>
                                 <option value="trimestral">Trimestral</option>
@@ -96,18 +92,18 @@
 
                     <div id="paso2">
                         <div class="mb-3">
-                            <label for="username">Fecha de disposición</label>
+                            <label for="fechaDisp">Fecha de disposición</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">@</span>
                                 </div>
-                                <input type="date" name="fechaDisp" class="form-control" id="email" placeholder="">
+                                <input type="date" name="fechaDisp" class="form-control" id="fechaDisp" placeholder="">
                             </div>
                         </div>
 
                         <div class="mb-3">
-                            <label for="email">Monto de disposición </label>
-                            <input type="number" max="12000000" name="montoDisp" class="form-control" id="email"
+                            <label for="montoDisp">Monto de disposición </label>
+                            <input type="number" max="12000000" name="montoDisp" class="form-control" id="montoDisp"
                                 placeholder="">
                         </div>
 
@@ -119,7 +115,7 @@
 
 
                                 <label for="firstName">Plazo del crédito (Meses)</label>
-                                <select name="npagos" id="npagos" class="custom-select">
+                                <select name="npagos" id="npagos" class="form-select">
                                     <option value="12">12 Meses</option>
                                     <option value="24">24 Meses</option>
                                     <option value="36">36 Meses</option>
@@ -179,7 +175,8 @@
 
                         <input type="button" class="btn btn-secondary btn-lg btn-block" id="btnRegresar"
                             value="Regresar">
-                        <button class="btn btn-primary btn-lg btn-block" type="submit">Solicitar cotización</button>
+                        <button class="btn btn-primary btn-lg btn-block" id="Solicitar" type="submit">Solicitar cotización</button>
+                        <img src="spinner.gif" id="spinner" style="width:auto; height:50px" alt="">
 
                     </div>
 
@@ -214,6 +211,7 @@
 
 
         $( "#paso2" ).hide();
+        $( "#spinner" ).hide();
 
 
         $("#btnContinuar").click(function () {
@@ -228,32 +226,59 @@
 
 
         $('input:radio[name="tipoCredito"]').change(
-    function(){
-        if (this.checked && this.value == 'creditoSimple') {
-            console.log("Simple")
-            $('#npagos').prop('disabled', false);
-            // $('#select-tipo-credito').prop('disabled', false);
+            function(){
+            if (this.checked && this.value == 'creditoSimple') {
+                console.log("Simple")
+                $('#npagos').prop('disabled', false);
+                // $('#select-tipo-credito').prop('disabled', false);
 
-            npagos = $( "#npagos option:selected" ).text();
-            tipoCredito = $( "#select-tipo-credito option:selected" ).text();
-            console.log(npagos+ ' | ' + tipoCredito)
+                npagos = $( "#npagos option:selected" ).text();
+                tipoCredito = $( "#select-tipo-credito option:selected" ).text();
+                console.log(npagos+ ' | ' + tipoCredito)
 
 
+            }
+            if(this.checked && this.value == 'creditoCorriente'){
+                console.log("Corriente")
+                $("#npagos").prop("selectedIndex", 0);
+                // $("#select-tipo-credito").prop("selectedIndex", 0);
+
+                $('#npagos').prop('disabled', true);
+                // $('#select-tipo-credito').prop('disabled', true);
+
+                npagos = $( "#npagos option:selected" ).text();
+                tipoCredito = $( "#select-tipo-credito option:selected" ).text();
+                console.log(npagos+ ' | ' + tipoCredito)
+
+
+            }
+        });
+
+        document.getElementById('fechaDisp').valueAsDate = new Date();
+
+
+
+
+
+    $('form').submit(function(){
+        var a = $("#nombre").val();
+        var b = $("#correo").val();
+        var d = $("#montoDisp").val();
+        var e = $("input[name='tipoCredito']:checked").val();
+        if (a == "" || b == "" || d == "" || e == null) {
+            alert("Revisa que todos los campos no esten vacios");
+            console.log("Valor: "+a)
+            console.log("Valor: "+b)
+            console.log("Valor: "+d)
+            console.log("Valor: "+e)
+            return false;
+        }else{
+            $("#Solicitar").prop('disabled', true);
+            $("#btnRegresar").prop('disabled', true);
+            $( "#spinner" ).show();
         }
-        if(this.checked && this.value == 'creditoCorriente'){
-            console.log("Corriente")
-            $("#npagos").prop("selectedIndex", 0);
-            // $("#select-tipo-credito").prop("selectedIndex", 0);
-
-            $('#npagos').prop('disabled', true);
-            // $('#select-tipo-credito').prop('disabled', true);
-
-            npagos = $( "#npagos option:selected" ).text();
-            tipoCredito = $( "#select-tipo-credito option:selected" ).text();
-            console.log(npagos+ ' | ' + tipoCredito)
 
 
-        }
     });
 
 

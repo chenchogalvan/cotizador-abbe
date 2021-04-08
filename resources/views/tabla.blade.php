@@ -17,7 +17,7 @@
 
 
     <main class="container">
-    <h3>La presente proyección se calcula con una tasa del 19% anual fija para fines informativos. <br>La tasa de interés podrá ajustarse de acuerdo al análisis de riesgos<br>Esta misma tabla fue enviada por correo electornico.</h3>
+    <p style="font-size: 20px;">Estimado <strong>{{ $totales[0]->nombre }}</strong>, la presente proyección se calcula con una tasa del 19% anual fija para fines informativos. <br>La tasa de interés podrá ajustarse de acuerdo al análisis de riesgos.<br>Está información fue enviada al correo <strong>{{ $totales[0]->correo }}</strong>.</p>
     {{-- <h4>El total del credito a pagar es de ${{ round($pagoTotal) }}</h4> --}}
 
     <table class="table" style="margin-top:50px; width:300px;">
