@@ -19,8 +19,9 @@
 <meta name="robots" content="index,follow"/>
 
 <link rel="stylesheet" href="https://www.fira.gob.mx/Nd/css/bootstrap.min.css" />
-<link rel="stylesheet" href="https://www.fira.gob.mx/Nd/css/portal.css" />
-s<link rel="stylesheet" href="https://www.fira.gob.mx/Nd/css/styles.css" />
+{{-- <link rel="stylesheet" href="https://www.fira.gob.mx/Nd/css/portal.css" /> --}}
+<link rel="stylesheet" href="/portal.css" />
+<link rel="stylesheet" href="https://www.fira.gob.mx/Nd/css/styles.css" />
 <link href="https://www.fira.gob.mx/Nd/img/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
 <link href="https://www.fira.gob.mx/Nd/img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
 <link href="https://www.fira.gob.mx/Nd/img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
@@ -34,7 +35,7 @@ s<link rel="stylesheet" href="https://www.fira.gob.mx/Nd/css/styles.css" />
 
 	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 	<script src="https://www.fira.gob.mx/Nd/Scripts/bootstrap.min.js"></script>
-	<script src="https://www.fira.gob.mx/Nd/Scripts/carga_xml.js"></script>
+	<script src="/Nd/carga_xml.js"></script>
 	<script>
 		document.write('<style id="antiClickjack">body{display:none !important;}</style>');
 
@@ -398,7 +399,7 @@ s<link rel="stylesheet" href="https://www.fira.gob.mx/Nd/css/styles.css" />
 		}
 	</script>
         {{-- <script type="text/javascript" src="https://www.fira.gob.mx/agrocostosApp/js/script.js"></script> --}}
-        <script type="text/javascript" src="script.js"></script>
+        <script type="text/javascript" src="/script.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
