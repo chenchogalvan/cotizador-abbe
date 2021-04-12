@@ -1,63 +1,40 @@
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-   <meta name="keywords" content="costos, superficies, pwa, cultivos, granos, hortalizas, estados, siap" />
-   <meta name="twitter:card" content="summary_large_image" />
-   <meta name="twitter:site" content="@fira_mexico" />
-   <meta name="twitter:creator" content="@fira_mexico" />
-   <!-- PWA -->
-   <link rel="manifest" href="./manifest.json">
-   <meta name="Avance Semanal FIRA" content="Appscope">
-   <meta name="theme-color" content="#003170">
-   <link rel="icon" href="favicon.png">
-   <link rel="icon" type="image/png" href="icon-36-36.png" sizes="36x36">
-   <link rel="icon" type="image/png" href="icon-192-192.png" sizes="192x192">
-   <link rel="icon" type="image/png" href="icon-1024-1024.png" sizes="1024x1024">
-   <!--Windows-->
-   <meta name="msapplication-TileColor" content="#003170">
-   <meta name="msapplication-TileImage" content="icon-192-192.png">
-   <!--IOS-->
-   <meta name="apple-mobile-web-app-capable" content="yes">
-   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-   <link rel="apple-touch-icon" sizes="192x192" href="icon-192-192.png">
-   <link rel="apple-touch-icon" sizes="1024x1024" href="icon-1024-1024.png">
-   <link rel="apple-touch-startup-image" href="launch.png">
-   <meta property="og:title" content="Agrocostos Interactivo FIRA" />
-   <meta property="og:description"
-      content="El sistema de Agrocostos es una herramienta que permite estimar de manera paramétrica costos de producción agrícola en una zona o región determinada bajo una tecnología de producción específica." />
-   <meta property="og:image" content="https://www.fira.gob.mx/Nd/img/og-appAgrocostos.jpg" />
-   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="language" content="es" />
-<meta name="robots" content="index,follow" />
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+	<meta name="keywords" content="costos, superficies, pwa, cultivos, granos, hortalizas, estados, siap"/>
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@fira_mexico" />
+	<meta name="twitter:creator" content="@fira_mexico" />
+	<meta property="og:title" content="Agrocostos Interactivo FIRA" />
+	<meta property="og:description" content="El sistema de Agrocostos es una herramienta que permite estimar de manera paramétrica costos de producción agrícola en una zona o región determinada bajo una tecnología de producción específica." />
+	<meta property="og:image" content="https://www.fira.gob.mx/Nd/img/og-appAgrocostos.jpg" />
 
-<meta property="fb:pages" content="397402150406945" />
-<link rel="stylesheet" href="/Nd/css/bootstrap.min.css" />
-<link rel="stylesheet" href="/Nd/css/portal.css" />
-<link rel="stylesheet" href="/Nd/css/styles.css" />
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="language" content="es"/>
+<meta name="robots" content="index,follow"/>
+
+<link rel="stylesheet" href="https://www.fira.gob.mx/Nd/css/bootstrap.min.css" />
+{{-- <link rel="stylesheet" href="https://www.fira.gob.mx/Nd/css/portal.css" /> --}}
+<link rel="stylesheet" href="/portal.css" />
+<link rel="stylesheet" href="https://www.fira.gob.mx/Nd/css/styles.css" />
 <link href="https://www.fira.gob.mx/Nd/img/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
 <link href="https://www.fira.gob.mx/Nd/img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
 <link href="https://www.fira.gob.mx/Nd/img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
 <link href="https://www.fira.gob.mx/Nd/img/favicon.ico" rel="shortcut icon">
-<link href="https://www.fira.gob.mx/Nd/site.webmanifest" rel="manifest">
+<link href="/site.webmanifest" rel="manifest">
 <link color="#003170" href="https://www.fira.gob.mx/Nd/img/safari-pinned-tab.svg" rel="mask-icon">
 <meta content="#003170" name="msapplication-TileColor">
 <meta content="https://www.fira.gob.mx/Nd/xml/browserconfig.xml" name="msapplication-config">
 <meta content="#ffffff" name="theme-color">
 
-	<script src="/Nd/Scripts/jquery-1.12.0.min.js"></script>
-	<script src="/Nd/Scripts/bootstrap.min.js"></script>
-	<script src="/Nd/Scripts/carga_xml.js"></script>
+
+	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<script src="https://www.fira.gob.mx/Nd/Scripts/bootstrap.min.js"></script>
+	<script src="/Nd/carga_xml.js"></script>
 	<script>
 		document.write('<style id="antiClickjack">body{display:none !important;}</style>');
 
