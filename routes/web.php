@@ -28,7 +28,7 @@ Route::get('/', function () {
 
 
 Route::get('/agrocostos-interactivo ', function () {
-    return view('fira');
+    return view('fira2');
 })->name('fira');
 
 Route::post('/cotizador', function (Request $request) {
