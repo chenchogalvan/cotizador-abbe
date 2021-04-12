@@ -118,15 +118,15 @@ var urlsToCache = [
 ];
 
 //Instala el Service Worker y Guarda Cache
-self.addEventListener('install', function (event) {
-  self.skipWaiting();
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => {
-        cache.addAll(urlsToCache);
-      })
-  );
-});
+// self.addEventListener('install', function (event) {
+//   self.skipWaiting();
+//   event.waitUntil(
+//     caches.open(CACHE_NAME)
+//       .then(cache => {
+//         cache.addAll(urlsToCache);
+//       })
+//   );
+// });
 
 //Revisa si el serviceWorker estÃ¡ activo
 self.addEventListener('activate', function (event) {
