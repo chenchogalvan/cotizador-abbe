@@ -366,7 +366,7 @@ $(document).ready(function () {
     $('.seccion').removeClass('collapse');
     $('.cuerpo img').show();
     $('.cuerpo h1').show();
-    $('#tituloSec').html('Consulta los costos<br> de producciÃ³n por:');
+    $('#tituloSec').html('Consulta los costos<br> de producción por:');
     $(".formGroup select").val(0);
     $('#formulario').show();
     llenaSelects(cultivosObj, zonasObj, estadosObj);
@@ -537,7 +537,7 @@ $(document).ready(function () {
 
         $('#riesgosSeguros').append('</ul>');
         if ($('#riesgosSeguros li').length == 0) {
-          $('#riesgosSeguros').html('<h2 style="color:red">No existe informaciÃ³n para  ' + cultivo + ' en ' + estado + ' en ciclo ' + ciclo + '</h2>');
+          $('#riesgosSeguros').html('<h2 style="color:red">No existe información para  ' + cultivo + ' en ' + estado + ' en ciclo ' + ciclo + '</h2>');
           $('.consideraciones').hide();
         }
         $('header .SIAP').show();
@@ -607,7 +607,7 @@ $(document).ready(function () {
 
     if ($.isEmptyObject(siapObj)) {
       $('header .SIAP').hide();
-      $('#datosSiap h1').html('No se encontro informaciÃ³n SIAP');
+      $('#datosSiap h1').html('No se encontro información SIAP');
       $('#datosSiap .imagen').css('background-image', 'none');
       $('#datosSiap div').removeClass('loader');
       $('#datosSiap table').html('');
@@ -615,7 +615,7 @@ $(document).ready(function () {
     }
     siap = siapObj[$('#variedadSiap')[0].value];
     cultivo = $('#cultivo')[0].value;
-    $('#datosSiap h1').html('Datos del SIAP al 2019').append('<img src="img/siap.svg" alt="SIAP" />');
+    $('#datosSiap h1').html('Datos del SIAP al 2019').append('');
     $('#datosSiap span').html(siap[0]);
 
     $('#datosSiap table').html('');
