@@ -978,7 +978,7 @@
 			}
 		}
 	</script>
-   <script type="text/javascript" src="js/script.js"></script>
+   <script type="text/javascript" src="/script.js"></script>
    <!-- Global site tag (gtag.js) - Google Analytics -->
    <script>
       let deferredPrompt;
