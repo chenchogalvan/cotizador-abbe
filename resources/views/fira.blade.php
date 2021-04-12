@@ -397,7 +397,8 @@ s<link rel="stylesheet" href="https://www.fira.gob.mx/Nd/css/styles.css" />
 			}
 		}
 	</script>
-        <script type="text/javascript" src="https://www.fira.gob.mx/agrocostosApp/js/script.js"></script>
+        {{-- <script type="text/javascript" src="https://www.fira.gob.mx/agrocostosApp/js/script.js"></script> --}}
+        <script type="text/javascript" src="script.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
