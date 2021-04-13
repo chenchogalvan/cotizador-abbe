@@ -1,50 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-	<meta name="keywords" content="costos, superficies, pwa, cultivos, granos, hortalizas, estados, siap"/>
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:site" content="@fira_mexico" />
-	<meta name="twitter:creator" content="@fira_mexico" />
-	<meta property="og:title" content="Agrocostos Interactivo FIRA" />
-	<meta property="og:description" content="El sistema de Agrocostos es una herramienta que permite estimar de manera paramétrica costos de producción agrícola en una zona o región determinada bajo una tecnología de producción específica." />
-	<meta property="og:image" content="https://www.fira.gob.mx/Nd/img/og-appAgrocostos.jpg" />
-
-    	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="language" content="es"/>
-<meta name="robots" content="index,follow"/>
 
 <link rel="stylesheet" href="https://www.fira.gob.mx/Nd/css/bootstrap.min.css" />
 {{-- <link rel="stylesheet" href="https://www.fira.gob.mx/Nd/css/portal.css" /> --}}
 <link rel="stylesheet" href="/portal.css" />
 <link rel="stylesheet" href="https://www.fira.gob.mx/Nd/css/styles.css" />
-<link href="https://www.fira.gob.mx/Nd/img/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
-<link href="https://www.fira.gob.mx/Nd/img/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
-<link href="https://www.fira.gob.mx/Nd/img/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
-<link href="https://www.fira.gob.mx/Nd/img/favicon.ico" rel="shortcut icon">
-<link href="/site.webmanifest" rel="manifest">
-<link color="#003170" href="https://www.fira.gob.mx/Nd/img/safari-pinned-tab.svg" rel="mask-icon">
-<meta content="#003170" name="msapplication-TileColor">
-<meta content="https://www.fira.gob.mx/Nd/xml/browserconfig.xml" name="msapplication-config">
-<meta content="#ffffff" name="theme-color">
+
 
 
 	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 	<script src="https://www.fira.gob.mx/Nd/Scripts/bootstrap.min.js"></script>
 	<script src="/Nd/carga_xml.js"></script>
-	<script>
-		document.write('<style id="antiClickjack">body{display:none !important;}</style>');
 
-		if (self === top) {
-			var antiClickjack = document.getElementById("antiClickjack");
-			antiClickjack.parentNode.removeChild(antiClickjack);
-		} else {
-			top.location = self.location;
-		}
-	</script>
 
    <title>Portal FIRA - Agocostos Interactivo</title>
    <style>
@@ -271,14 +239,7 @@
          }
       }
    </style>
-   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-3379651-1"></script>
-   <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
 
-      gtag('config', 'UA-3379651-1');
-   </script>
 </head>
 
 <body>
@@ -576,19 +537,6 @@
       <br />
    </div>
 
-
-
-	<script>
-		var images = $('img:not([src^="http"])', $('.texto_cont'));
-		var time = new Date().getTime();
-		for (var i = 0, l = images.length; i < l; i++) {
-			var image = $(images[i]);
-			var src   = image.attr('src');
-			if (src != null && src != '') {
-				image.attr('src', src + ((src.indexOf('?') != -1) ? '&' : '?') + 't=' + time);
-			}
-		}
-	</script>
    <script type="text/javascript" src="/script.js"></script>
 
 </body>
