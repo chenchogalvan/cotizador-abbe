@@ -14,7 +14,7 @@
 	<script src="/Nd/carga_xml.js"></script>
 
 
-   <title>Portal FIRA - Agocostos Interactivo</title>
+   <title></title>
    <style>
       .texto_cont .cuerpo img {
          max-width: 20%;
@@ -271,12 +271,12 @@
 
 
 
-<div class="fecha">
+{{-- <div class="fecha">
 	&Uacute;ltima fecha de actualización: jueves, 19 de noviembre de 2020
-</div>
+</div> --}}
          <div class="row">
-            <h1> Agrocostos Interactivo</h1>
-                <img src="https://abbeco.com.mx/images/ABBE_logo_sm.jpg" alt="" style="width:176px !important; height:66px !important;">
+            <h1> Paquetes tecnológicos</h1>
+                <img src="https://abbeweb.clustermx.com/img/logo.png" alt="" style="width:176px !important; height:auto !important;">
          </div>
          <div class="row">
             <div class="seccion" id="formulario">
