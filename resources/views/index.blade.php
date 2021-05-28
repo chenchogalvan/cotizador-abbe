@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 
+
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -41,9 +42,9 @@
 
             <div class="col-md-12">
 
-                <form class="needs-validation" method="POST" name="Form" action="{{ route('cotizador') }}">
+                {{-- <form class="needs-validation" method="POST" name="Form" action="{{ route('cotizador') }}"> --}}
                     @csrf
-                    <input type="hidden" name="tokenL" value="{{ rand(0,1000000000000000) }}">
+                    <input type="hidden" name="tokenL" id="tokenL" value="{{ rand(0,1000000000000000) }}">
 
                     <div id="paso1">
                         <div class="row">
@@ -77,7 +78,7 @@
 
                         <div class="mb-3">
                             <label for="periocidad">Periodicidad de pago </label>
-                            <select class="form-select" name="periocidadPago" id="select-tipo-credito">
+                            <select class="form-select" name="periocidadPago" id="periocidadPago">
                                 <option value="mensual">Mensual</option>
                                 <option value="trimestral">Trimestral</option>
                                 <option value="semestral">Semestral</option>
@@ -180,7 +181,14 @@
 
                     </div>
 
-                </form>
+                {{-- </form> --}}
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <div id="salida"></div>
             </div>
         </div>
 
@@ -192,6 +200,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
     </script>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 
 
@@ -286,6 +297,45 @@
     //TODO
     //Agregar el % de manera informativa
     //Cambiar de manera automatica el npagos dependiendo del tipo de credito
+
+
+
+    //AJAX
+
+    $('#Solicitar').click(regresar);
+
+    function regresar() {
+
+        $.ajax({
+
+            url: 'https://abbe.clustermx.com/api/cotizador',
+            type:'post',
+            dataType: 'json',
+            data:{
+                tokenL: $('#tokenL').val(),
+                nombre: $('#nombre').val(),
+                correo: $('#correo').val(),
+                tipoCredito: $("input[name='tipoCredito']:checked").val(),
+                periocidadPago: $("#periocidadPago").val(),
+                fechaDisp: $('#fechaDisp').val(),
+                montoDisp: $('#montoDisp').val(),
+                npagos: $("#npagos").val(),
+                _token: "{{ csrf_token() }}",
+                intervalo: ""
+
+
+            }
+
+        }).done(
+            function (data) {
+
+                $('#salida').append(data);
+                console.log(data);
+                console.log('hola');
+
+            }
+        );
+    }
 
 
 

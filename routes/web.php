@@ -27,7 +27,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/agrocostos-interactivo ', function () {
+Route::get('agrocostos-interactivo', function () {
     return view('fira2');
 })->name('fira');
 
@@ -36,6 +36,8 @@ Route::post('/cotizador', function (Request $request) {
     setlocale(LC_MONETARY, 'es_MX');
 
     // return $request->all();
+
+
 
     if ($request->get('periocidadPago') == 'mensual') {
         $periocidad = 12;
@@ -208,7 +210,8 @@ Route::post('/cotizador', function (Request $request) {
 
     // return 'Intereses: '.$totalIntereses.' | Pago Mensual:'. $pago .' | Costo total del credito: '.$pagoTotal;
 
-    return view('tabla', compact('tabla', /*'excel',*/ 'pagoTotal', 'totales', 'tipoPeriocidad'));
+    // return view('tabla', compact('tabla', /*'excel',*/ 'pagoTotal', 'totales', 'tipoPeriocidad'));
+    return $tabla;
 
     //echo 'Total Intereses: '.$totalIntereses.'<br>'.'Total pago: '.$totalPago;
     //return "Hemos enviado el cotizador a tu correo electronico";
