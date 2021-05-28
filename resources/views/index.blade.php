@@ -308,6 +308,7 @@
 
         $.ajax({
 
+            // url: 'http://cotizador-abbe.test/cotizador',
             url: 'https://abbe.clustermx.com/api/cotizador',
             type:'post',
             dataType: 'json',
@@ -320,7 +321,7 @@
                 fechaDisp: $('#fechaDisp').val(),
                 montoDisp: $('#montoDisp').val(),
                 npagos: $("#npagos").val(),
-                _token: "{{ csrf_token() }}",
+                _token: $("input[name='_token']").val(),
                 intervalo: ""
 
 
