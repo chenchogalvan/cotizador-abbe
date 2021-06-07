@@ -12,10 +12,20 @@ class Total extends Model
         'correo',
         'totalInteres',
         'pagoMensual',
-        'costoTotal'
+        'costoTotal',
+        'tipoPeriocidad',
+        'montoSolicitado',
+        'periocidadPago',
+        'plazoCredito',
+        'tazaInteres',
+        'tipoCredito'
+
     ];
 
     protected $hidden = [
         'id', 'token', 'created_at', 'updated_at'
     ];
+
+    protected $dates = ['fechaSolicitud'];
+
 }

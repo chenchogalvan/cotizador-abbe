@@ -34,6 +34,7 @@ Route::get('agrocostos-interactivo', function () {
 Route::post('/cotizador', function (Request $request) {
 
     setlocale(LC_MONETARY, 'es_MX');
+    setlocale(LC_ALL, 'es_MX');
 
     // return $request->all();
 
@@ -58,6 +59,7 @@ Route::post('/cotizador', function (Request $request) {
     }
 
     if ($request->get('tipoCredito') == 'creditoCorriente') {
+        $tipoCredito = "Credito Corriente";
         if ($request->get('periocidadPago') == 'mensual') {
             $npagos = '12';
             $tipoPeriocidad = "Mensual";
@@ -75,6 +77,7 @@ Route::post('/cotizador', function (Request $request) {
         // $intervalo = 1;
         // return $npagos . '  |   '. $periocidad.' | '. $intervalo;
     }else if($request->get('tipoCredito') == 'creditoSimple'){
+        $tipoCredito = "Credito Simple";
         $npagos = $request->get('npagos');
         $npagos = $npagos / $intervalo;
         // return $npagos;
@@ -93,6 +96,7 @@ Route::post('/cotizador', function (Request $request) {
     $totalPago = 0;
     $cont = 0;
     $tabla;
+    $tazaInteres = 19;
 
 
 
@@ -167,6 +171,10 @@ Route::post('/cotizador', function (Request $request) {
 
     // Mail::to($request->correo)->send( new mailCotizador($excel));
 
+    //fecha actual
+    $fechaHoy = Carbon\Carbon::now();
+
+
     $to = new Total;
     $to->token = $request->get('tokenL');
     $to->nombre = $request->get('nombre');
@@ -174,6 +182,14 @@ Route::post('/cotizador', function (Request $request) {
     $to->totalInteres = $totalIntereses;
     $to->pagoMensual = $pago;
     $to->costoTotal = $pagoTotal;
+    $to->tipoPeriocidad = $tipoPeriocidad;
+    $to->montoSolicitado = $request->get('montoDisp');
+    $to->periocidadPago = $request->get('periocidadPago');
+    $to->plazoCredito = $request->get('npagos');
+    $to->tazaInteres = $tazaInteres;
+    $to->tipoCredito = $tipoCredito;
+    $to->fechaSolicitud = $fechaHoy;
+
     $to->save();
 
 
@@ -211,7 +227,9 @@ Route::post('/cotizador', function (Request $request) {
     // return 'Intereses: '.$totalIntereses.' | Pago Mensual:'. $pago .' | Costo total del credito: '.$pagoTotal;
 
     // return view('tabla', compact('tabla', /*'excel',*/ 'pagoTotal', 'totales', 'tipoPeriocidad'));
-    return $tabla;
+
+    //Regresar pagoTotal, tipoPeriocidad,
+    return $token;
 
     //echo 'Total Intereses: '.$totalIntereses.'<br>'.'Total pago: '.$totalPago;
     //return "Hemos enviado el cotizador a tu correo electronico";
@@ -219,5 +237,25 @@ Route::post('/cotizador', function (Request $request) {
     //return view('tabla', compact(['cantidad'], ['fechaDisp'], ['montoDisp'], ['totalIntereses'], ['totalPago']));
 
 })->name('cotizador');
+
+Route::get('/cotizador-personalizado', 'CotizadorController@cotizadorPersonalizado')->name('cotizadorPersonalizado');
+
+Route::post('/cotizadorPerso', 'CotizadorController@cotizadorPerso');
+
+
+
+
+Route::get('/cotizador-vista', function (Request $request) {
+
+    $token = $request->get('token');
+
+    $tabla = Tabla::where('token', $token)->get();
+    $totales = Total::where('token', $token)->get();
+
+    // return $totales;
+    return view('tabla', compact('tabla', 'totales'));
+
+
+});
 
 

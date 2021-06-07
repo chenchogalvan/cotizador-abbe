@@ -308,8 +308,8 @@
 
         $.ajax({
 
-            // url: 'http://cotizador-abbe.test/cotizador',
-            url: 'https://abbe.clustermx.com/api/cotizador',
+            url: 'http://cotizador-abbe.test/cotizador',
+            // url: 'https://abbe.clustermx.com/api/cotizador',
             type:'post',
             dataType: 'json',
             data:{
@@ -333,6 +333,8 @@
                 $('#salida').append(data);
                 console.log(data);
                 console.log('hola');
+
+                location.href ="http://abbeco.webitmx.com/cotizador-vista?token="+data;
 
             }
         );

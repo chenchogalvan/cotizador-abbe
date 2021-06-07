@@ -28,7 +28,7 @@
         </thead>
         <tbody>
             <tr>
-                <td style="">Pago {{$tipoPeriocidad}}</td>
+                <td style="">Pago {{$totales[0]->tipoPeriocidad}}</td>
                 <td style="">${{ number_format(round($totales[0]->totalInteres)) }}</td>
             <tr>
             <tr>
@@ -81,7 +81,7 @@
 
             </tbody>
         </table>
-        <a class="btn btn-primary btn-lg btn-block" href="{{ url()->previous() }}">Regresar</a>
+        {{-- <a class="btn btn-primary btn-lg btn-block" href="{{ url()->previous() }}">Regresar</a> --}}
     </main>
 
     <!-- Optional JavaScript; choose one of the two! -->

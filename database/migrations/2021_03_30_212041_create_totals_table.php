@@ -21,6 +21,13 @@ class CreateTotalsTable extends Migration
             $table->string("totalInteres");
             $table->string("pagoMensual");
             $table->string("costoTotal");
+            $table->string('tipoPeriocidad');
+            $table->string('montoSolicitado');
+            $table->string('periocidadPago');
+            $table->string('plazoCredito');
+            $table->string('tazaInteres');
+            $table->string('tipoCredito');
+            $table->dateTime('fechaSolicitud');
             $table->timestamps();
         });
     }
