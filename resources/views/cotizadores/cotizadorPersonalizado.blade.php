@@ -353,7 +353,7 @@
                 console.log(data);
                 console.log('hola');
 
-                location.href ="http://abbeco.webitmx.com/cotizador-vista?token="+data;
+                location.href ="https://abbeco.webitmx.com/cotizador-vista?token="+data;
 
             }
         ).fail(
