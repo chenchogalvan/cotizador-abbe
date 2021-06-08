@@ -152,7 +152,7 @@ class CotizadorController extends Controller
             $t->montoDisp = $montoDisp;
             $t->pago = $pago;
             $t->capital = $capital;
-            $t->interes = $interes;
+            $t->interes = $tazaInteres;
             $t->saldoFinal = $saldoFinal;
             $t->save();
 
