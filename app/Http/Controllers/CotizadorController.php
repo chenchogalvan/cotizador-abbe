@@ -122,7 +122,7 @@ class CotizadorController extends Controller
 
             //Calcular pago
             // $in = 17/$periocidad;
-            $in = 19/$periocidad;
+            $in = $interes/$periocidad;
             $C = $pagoinicial;
             $I = $in/100;
             $N = $npagos;
