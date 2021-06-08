@@ -324,6 +324,10 @@
 
     function regresar() {
 
+        $("#Solicitar").prop('disabled', true);
+        $("#btnRegresar").prop('disabled', true);
+        $( "#spinner" ).show();
+
         $.ajax({
 
             // url: 'http://cotizador-abbe.test/cotizadorPerso',
