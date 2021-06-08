@@ -242,6 +242,8 @@ Route::group(['middleware' => ['cors']], function () {
 
     })->name('cotizador');
 
+    Route::post('/cotizadorPerso', 'CotizadorController@cotizadorPerso');
+
 
 });
 

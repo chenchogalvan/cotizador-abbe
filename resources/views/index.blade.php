@@ -308,8 +308,8 @@
 
         $.ajax({
 
-            url: 'http://cotizador-abbe.test/cotizador',
-            // url: 'https://abbe.clustermx.com/api/cotizador',
+            // url: 'http://cotizador-abbe.test/cotizador',
+            url: 'https://abbeco.webitmx.com/api/cotizador',
             type:'post',
             dataType: 'json',
             data:{
