@@ -306,6 +306,10 @@
 
     function regresar() {
 
+        $("#Solicitar").prop('disabled', true);
+        $("#btnRegresar").prop('disabled', true);
+        $( "#spinner" ).show();
+
         $.ajax({
 
             // url: 'http://cotizador-abbe.test/cotizador',
@@ -336,6 +340,12 @@
 
                 location.href ="http://abbeco.webitmx.com/cotizador-vista?token="+data;
 
+            }
+        ).fail(
+            function (jqXHR, textStatus) {
+                $("#Solicitar").prop('disabled', false);
+                $("#btnRegresar").prop('disabled', false);
+                $( "#spinner" ).hide();
             }
         );
     }

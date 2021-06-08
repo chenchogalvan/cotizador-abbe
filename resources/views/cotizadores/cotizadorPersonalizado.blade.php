@@ -353,10 +353,14 @@
                 console.log(data);
                 console.log('hola');
 
-                // location.href ="http://abbeco.webitmx.com/cotizador-vista?token="+data;
-                // location.href = "http://cotizador-abbe.test/cotizador-vista?token="+data;
+                location.href ="http://abbeco.webitmx.com/cotizador-vista?token="+data;
 
-
+            }
+        ).fail(
+            function (jqXHR, textStatus) {
+                $("#Solicitar").prop('disabled', false);
+                $("#btnRegresar").prop('disabled', false);
+                $( "#spinner" ).hide();
             }
         );
     }
