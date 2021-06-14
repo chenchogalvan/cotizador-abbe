@@ -118,7 +118,7 @@
             <tbody>
                 <tr>
                     <td style=""><b>Monto solicitado: </b></td>
-                    <td style="">{{ $totales[0]->montoSolicitado }}</td>
+                    <td style="">{{ number_format(round($totales[0]->montoSolicitado), 2) }}</td>
                 </tr>
                 <tr>
                     <td style=""><b>Periocidad de pago: </b></td>
