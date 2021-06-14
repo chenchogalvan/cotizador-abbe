@@ -27,14 +27,17 @@
             </tr>
         </thead>
         <tbody>
+
             <tr>
-                <td style="">Pago {{$totales[0]->tipoPeriocidad}}</td>
-                <td style="">${{ number_format(round($totales[0]->totalInteres)) }}</td>
-            <tr>
-            <tr>
-                <td style="">Intereses totales</td>
+                <td style=""> Pago {{$totales[0]->tipoPeriocidad}} </td>
                 <td style="">${{ number_format(round($totales[0]->pagoMensual)) }}</td>
             <tr>
+
+            <tr>
+                <td style="">Intereses totales</td>
+                <td style="">${{ number_format(round($totales[0]->totalInteres)) }}</td>
+            <tr>
+
 
             <tr>
                 <td style="">Costo total del credito</td>
