@@ -334,7 +334,7 @@
 
         $.ajax({
 
-            url: 'http://cotizador-abbe.test/cotizador',
+            url: action+'/cotizador',
             // url: 'https://abbeco.webitmx.com/api/cotizador',
             type:'post',
             dataType: 'json',
