@@ -6,9 +6,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+
+
+    <link rel="stylesheet" href="/css-email/lib/email.css" type="text/css">
+    {{-- <link rel="stylesheet" href="/css-email/examples.css" type="text/css"> --}}
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
 
 
     <style>
@@ -55,7 +61,9 @@
                             </div>
                             <div class="col-md-12 mb-3">
                                 <label for="correo">Correo</label>
-                                <input type="text" name="correo" class="form-control" id="correo" placeholder="">
+                                {{-- <input type="text" name="correo" class="form-control" id="correo" placeholder=""> --}}
+                                <div id="emails-input"></div>
+
                             </div>
                         </div>
 
@@ -193,6 +201,10 @@
         </div>
 
     </div>
+
+
+
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
@@ -203,6 +215,11 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+<script src="/js-email/lib/utils.js"></script>
+<script src="/js-email/lib/emails-input.js"></script>
+<script src="/js-email/app.js"></script>
 
 
 
@@ -300,9 +317,12 @@
 
 
 
+
     //AJAX
 
     $('#Solicitar').click(regresar);
+
+    var action = "{{ env("APP_URL") }}"
 
     function regresar() {
 
@@ -310,16 +330,18 @@
         $("#btnRegresar").prop('disabled', true);
         $( "#spinner" ).show();
 
+        const emails = emailsInput.getValue()
+
         $.ajax({
 
-            // url: 'http://cotizador-abbe.test/cotizador',
-            url: 'https://abbeco.webitmx.com/api/cotizador',
+            url: 'http://cotizador-abbe.test/cotizador',
+            // url: 'https://abbeco.webitmx.com/api/cotizador',
             type:'post',
             dataType: 'json',
             data:{
                 tokenL: $('#tokenL').val(),
                 nombre: $('#nombre').val(),
-                correo: $('#correo').val(),
+                correo: emails,
                 tipoCredito: $("input[name='tipoCredito']:checked").val(),
                 periocidadPago: $("#periocidadPago").val(),
                 fechaDisp: $('#fechaDisp').val(),
@@ -335,10 +357,14 @@
             function (data) {
 
                 $('#salida').append(data);
-                console.log(data);
+                console.log(data.Correo);
                 console.log('hola');
 
-                location.href ="https://abbeco.webitmx.com/cotizador-vista?token="+data;
+
+                location.href = action+"/cotizador-vista?token="+data.Token+"&correo="+data.Correo;
+                $("#Solicitar").prop('disabled', false);
+                $("#btnRegresar").prop('disabled', false);
+                $( "#spinner" ).hide();
 
             }
         ).fail(

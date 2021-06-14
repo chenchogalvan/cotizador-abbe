@@ -16,6 +16,7 @@ class CreateTablasTable extends Migration
         Schema::create('tablas', function (Blueprint $table) {
             $table->id();
             $table->string('token');
+            $table->string('correo');
             $table->string('fechaPago');
             $table->string('montoDisp');
             $table->string('pago');

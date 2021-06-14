@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+
+    <link rel="stylesheet" href="/css-email/lib/email.css" type="text/css">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
@@ -50,17 +52,18 @@
                         <div class="row">
                             <h4 class="mb-3">Información del solicitante</h4>
                             <div class="col-md-12 mb-3">
-                                <label for="nombre">Nombre</label>
+                                <label for="nombre"><strong>Nombre </strong></label>
                                 <input type="text" name="nombre" class="form-control" id="nombre" placeholder="">
                             </div>
                             <div class="col-md-12 mb-3">
-                                <label for="correo">Correo</label>
-                                <input type="text" name="correo" class="form-control" id="correo" placeholder="">
+                                <label for="correo"> <strong> Correo</strong> <small>puedes seleccionar diferentes correos electronicos separados por coma</small> </label>
+                                {{-- <inpt type="text" name="correo" class="form-control" id="correo" placeholder=""> --}}
+                                    <div id="emails-input"></div>
                             </div>
                         </div>
 
                         <div class="mb-3">
-                            <label for="TipoCredito">Tipo de crédito</label>
+                            <label for="TipoCredito"> <strong> Tipo de crédito</strong></label>
                         </div>
                         <div class="my-3">
                             <div class="form-check">
@@ -77,7 +80,7 @@
 
 
                         <div class="mb-3">
-                            <label for="periocidad">Periodicidad de pago </label>
+                            <label for="periocidad"><strong> Periodicidad de pago</strong> </label>
                             <select class="form-select" name="periocidadPago" id="periocidadPago">
                                 <option value="mensual">Mensual</option>
                                 <option value="trimestral">Trimestral</option>
@@ -93,7 +96,7 @@
 
                     <div id="paso2">
                         <div class="mb-3">
-                            <label for="fechaDisp">Fecha de disposición</label>
+                            <label for="fechaDisp"><strong>Fecha de disposición</strong></label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">@</span>
@@ -103,7 +106,7 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="montoDisp">Monto de disposición </label>
+                            <label for="montoDisp"><strong>Monto de disposición</strong> </label>
                             <input type="number" max="12000000" name="montoDisp" class="form-control" id="montoDisp"
                                 placeholder="">
                         </div>
@@ -114,7 +117,7 @@
                             <div class="col-md-12 mb-3">
 
 
-                                <label for="tinteres">Taza de interes</label>
+                                <label for="tinteres"> <strong> Taza de interes </strong></label>
                                 <select name="tinteres" id="tinteres" class="form-select">
                                     <option value="15">15%</option>
                                     <option value="16">16%</option>
@@ -133,7 +136,7 @@
                             <div class="col-md-12 mb-3">
 
 
-                                <label for="firstName">Plazo del crédito (Meses)</label>
+                                <label for="firstName"> <strong>Plazo del crédito (Meses) </strong></label>
                                 <select name="npagos" id="npagos" class="form-select">
                                     <option value="12">12 Meses</option>
                                     <option value="24">24 Meses</option>
@@ -221,6 +224,11 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+<script src="/js-email/lib/utils.js"></script>
+<script src="/js-email/lib/emails-input.js"></script>
+<script src="/js-email/app.js"></script>
 
 
 
@@ -322,28 +330,32 @@
 
     $('#Solicitar').click(regresar);
 
+    var action = "{{ env("APP_URL") }}"
+
     function regresar() {
 
         $("#Solicitar").prop('disabled', true);
         $("#btnRegresar").prop('disabled', true);
         $( "#spinner" ).show();
 
+        const emails = emailsInput.getValue()
+
         $.ajax({
 
-            // url: 'http://cotizador-abbe.test/cotizadorPerso',
-            url: 'https://abbeco.webitmx.com/api/cotizador',
+            url: action+'/api/cotizadorPerso',
+            // url: 'https://abbeco.webitmx.com/api/cotizador',
             type:'post',
             dataType: 'json',
             data:{
                 tokenL: $('#tokenL').val(),
                 nombre: $('#nombre').val(),
-                correo: $('#correo').val(),
+                correo: emails,
                 tipoCredito: $("input[name='tipoCredito']:checked").val(),
+                tinteres: $("#tinteres").val(),
                 periocidadPago: $("#periocidadPago").val(),
                 fechaDisp: $('#fechaDisp').val(),
                 montoDisp: $('#montoDisp').val(),
                 npagos: $("#npagos").val(),
-                tinteres: $("#tinteres").val(),
                 _token: $("input[name='_token']").val(),
                 intervalo: ""
 
@@ -354,10 +366,14 @@
             function (data) {
 
                 $('#salida').append(data);
-                console.log(data);
+                console.log(data.Correo);
                 console.log('hola');
 
-                location.href ="https://abbeco.webitmx.com/cotizador-vista?token="+data;
+
+                location.href = action+"/cotizador-vista?token="+data.Token+"&correo="+data.Correo;
+                $("#Solicitar").prop('disabled', false);
+                $("#btnRegresar").prop('disabled', false);
+                $( "#spinner" ).hide();
 
             }
         ).fail(
