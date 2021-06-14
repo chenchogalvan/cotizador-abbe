@@ -60,7 +60,7 @@
                                 <input type="text" name="nombre" class="form-control" id="nombre" placeholder="">
                             </div>
                             <div class="col-md-12 mb-3">
-                                <label for="correo">Correo</label>
+                                <label for="correo">Correo <small>puedes seleccionar diferentes correos electronicos separados por coma</small></label>
                                 {{-- <input type="text" name="correo" class="form-control" id="correo" placeholder=""> --}}
                                 <div id="emails-input"></div>
 
