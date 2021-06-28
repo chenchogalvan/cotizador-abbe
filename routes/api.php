@@ -107,11 +107,12 @@ Route::group(['middleware' => ['cors']], function () {
 
             $totalIntereses = 0;
             $totalPago = 0;
+            $totalCapital = 0;
             $cont = 0;
             $tabla;
             $tazaInteres = 19;
 
-
+            $fechaDisp = date("d-M-Y",strtotime($fechaDisp."+ 1 year"));
 
             //Maximo de 60 minimo de 12- Opciones de plazo: multiplos de 12 de 12 hasta 60
             for ($i=0; $i < $npagos; $i++) {
@@ -121,7 +122,7 @@ Route::group(['middleware' => ['cors']], function () {
                 //Iniciamos el contador del intervalo
                 $inter = $intervalo * $cont + 1;
                 //Hacemos la suma de la fecha origen + el intervalo seleccionado por el periodo de pago
-                $fechaPago = date("d-M-Y",strtotime($fechaOrigen."+". $inter . "month"));
+                $fechaPago = date("d-M-Y",strtotime($fechaDisp."+". $inter . "month"));
 
 
                 $interes = ($montoDisp * 0.19)/$periocidad;
@@ -171,6 +172,7 @@ Route::group(['middleware' => ['cors']], function () {
                 $cont = $cont+1;
 
                 $totalIntereses = $totalIntereses + $interes;
+                $totalCapital = $totalCapital + $capital;
             }
 
             $pagoTotal = $pago * $npagos;
@@ -197,6 +199,7 @@ Route::group(['middleware' => ['cors']], function () {
             $to->pagoMensual = $pago;
             $to->costoTotal = $pagoTotal;
             $to->tipoPeriocidad = $tipoPeriocidad;
+            $to->totalCapital = $totalCapital;
             $to->montoSolicitado = $request->get('montoDisp');
             $to->periocidadPago = $request->get('periocidadPago');
             $to->plazoCredito = $request->get('npagos');

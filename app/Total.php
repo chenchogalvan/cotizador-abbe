@@ -18,7 +18,8 @@ class Total extends Model
         'periocidadPago',
         'plazoCredito',
         'tazaInteres',
-        'tipoCredito'
+        'tipoCredito',
+        'totalCapital'
 
     ];
 

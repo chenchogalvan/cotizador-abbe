@@ -118,7 +118,7 @@
             <tbody>
                 <tr>
                     <td style=""><b>Monto solicitado: </b></td>
-                    <td style="">{{ number_format(round($totales[0]->montoSolicitado), 2) }}</td>
+                    <td style="">${{ number_format(round($totales[0]->montoSolicitado), 2) }}</td>
                 </tr>
                 <tr>
                     <td style=""><b>Periocidad de pago: </b></td>
@@ -135,7 +135,7 @@
                     <td style="">{{ $totales[0]->tazaInteres }}%</td>
                 </tr>
                 <tr>
-                    <td style=""><b>Pago mensual, trimestral, semestral o anual:</b></td>
+                    <td style=""><b>Pago {{ $totales[0]->periocidadPago }}:</b></td>
                     <td style="">${{ number_format(round($totales[0]->pagoMensual), 2) }}</td>
                 </tr>
             </tbody>
@@ -192,8 +192,8 @@
                 <tr>
                     <td><b>Total</b></td>
                     <td>N/A</td>
-                    <td>${{ number_format(round($totales[0]->pagoMensual), 2) }}</td>
                     <td>${{ number_format(round($totales[0]->costoTotal), 2) }}</td>
+                    <td>${{ number_format(round($totales[0]->totalCapital), 2) }}</td>
                     <td>${{ number_format(round($totales[0]->totalInteres), 2) }}</td>
                     <td>N/A</td>
                 </tr>

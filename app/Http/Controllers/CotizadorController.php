@@ -90,6 +90,7 @@ class CotizadorController extends Controller
 
             $totalIntereses = 0;
             $totalPago = 0;
+            $totalCapital = 0;
             $cont = 0;
             $tabla;
             //Cambiar a la taza de interes del formulario
@@ -109,6 +110,8 @@ class CotizadorController extends Controller
             }
 
 
+            $fechaDisp = date("d-M-Y",strtotime($fechaDisp."+ 1 year"));
+
 
             //Maximo de 60 minimo de 12- Opciones de plazo: multiplos de 12 de 12 hasta 60
             for ($i=0; $i < $npagos; $i++) {
@@ -118,7 +121,7 @@ class CotizadorController extends Controller
                 //Iniciamos el contador del intervalo
                 $inter = $intervalo * $cont + 1;
                 //Hacemos la suma de la fecha origen + el intervalo seleccionado por el periodo de pago
-                $fechaPago = date("d-M-Y",strtotime($fechaOrigen."+". $inter . "month"));
+                $fechaPago = date("d-M-Y",strtotime($fechaDisp."+". $inter . "month"));
 
 
                 $interes = ($montoDisp * $interesDecimal)/$periocidad;
@@ -169,6 +172,7 @@ class CotizadorController extends Controller
                 $cont = $cont+1;
 
                 $totalIntereses = $totalIntereses + $interes;
+                $totalCapital = $totalCapital + $capital;
             }
 
             $pagoTotal = $pago * $npagos;
@@ -192,6 +196,7 @@ class CotizadorController extends Controller
             $to->nombre = $request->get('nombre');
             $to->correo = $correo;
             $to->totalInteres = $totalIntereses;
+            $to->totalCapital = $totalCapital;
             $to->pagoMensual = $pago;
             $to->costoTotal = $pagoTotal;
             $to->tipoPeriocidad = $tipoPeriocidad;

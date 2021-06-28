@@ -19,6 +19,7 @@ class CreateTotalsTable extends Migration
             $table->string("correo");
             $table->string("token");
             $table->string("totalInteres");
+            $table->string('totalCapital');
             $table->string("pagoMensual");
             $table->string("costoTotal");
             $table->string('tipoPeriocidad');
