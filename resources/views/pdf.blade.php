@@ -193,7 +193,7 @@
                     <td><b>Total</b></td>
                     <td>N/A</td>
                     <td>${{ number_format(round($totales[0]->costoTotal), 2) }}</td>
-                    <td>${{ number_format(round($totales[0]->totalCapital), 2) }}</td>
+                    <td>${{ number_format(round($totales[0]->montoSolicitado), 2) }}</td>
                     <td>${{ number_format(round($totales[0]->totalInteres), 2) }}</td>
                     <td>N/A</td>
                 </tr>
