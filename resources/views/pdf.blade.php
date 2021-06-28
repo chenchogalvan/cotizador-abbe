@@ -136,7 +136,7 @@
                 </tr>
                 <tr>
                     <td style=""><b>Pago {{ $totales[0]->periocidadPago }}:</b></td>
-                    <td style="">${{ number_format(round($totales[0]->pagoMensual), 2) }}</td>
+                    <td style="">${{ number_format($totales[0]->pagoMensual, 2) }}</td>
                 </tr>
             </tbody>
         </table>
